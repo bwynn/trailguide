@@ -7,7 +7,7 @@ const express = require('express'),
 // config
 // =============================================================================
 const db = require('./config/db'),
-      port = process.env.PORT || 8080;
+      port = process.env.PORT || 3000;
 
 const options = {
   server: {

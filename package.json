@@ -6,6 +6,13 @@
     "express": "latest",
     "body-parser": "latest",
     "mongoose": "latest",
-    "morgan": "latest"
+    "morgan": "latest",
+    "bcrypt-nodejs": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "connect-flash": "latest"
+  },
+  "engines": {
+    "node": "0.12.2"
   }
 }
