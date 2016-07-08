@@ -6,7 +6,9 @@ const mongoose = require('mongoose'),
 const UserSchema = new Schema({
   creds: {
     email: String,
-    password: String
+    password: String,
+    author: Boolean,
+    admin: Boolean
   },
   location: {
     zipcode: Number,

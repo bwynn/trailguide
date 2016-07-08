@@ -42,6 +42,7 @@ app.use(express.static(__dirname + '/public'));
 
 // routes
 // =============================================================================
+require('./routes/admin_routes')(app);
 require('./routes/app_routes')(app);
 
 // server
