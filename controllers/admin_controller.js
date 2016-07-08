@@ -34,14 +34,14 @@ exports.updateUser = function(req, res) {
 
   User.find(function(err, user) {
     User.update({_id: req.session.passport.user}, {
-      creds.password: req.body.password,
-      creds.author: req.body.author,
-      creds.admin: req.body.admin,
-      location.zipcode: req.body.zipcode,
-      location.city: req.body.city,
-      profile.username: req.body.username,
-      profile.firstname: req.body.firstname,
-      profile.lastname: req.body.lastname
+      "creds.password": req.body.password,
+      "creds.author": req.body.author,
+      "creds.admin": req.body.admin,
+      "location.zipcode": req.body.zipcode,
+      "location.city": req.body.city,
+      "profile.username": req.body.username,
+      "profile.firstname": req.body.firstname,
+      "profile.lastname": req.body.lastname
     }, function(err, user) {
       if (err) {
         res.send(err);
