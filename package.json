@@ -10,7 +10,8 @@
     "bcrypt-nodejs": "latest",
     "passport": "latest",
     "passport-local": "latest",
-    "connect-flash": "latest"
+    "connect-flash": "latest",
+    "express-session": "latest"
   },
   "engines": {
     "node": "0.12.2"

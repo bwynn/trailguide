@@ -5,6 +5,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-animate": "latest",
-    "angular-filepicker": "latest"
+    "angular-filepicker": "latest",
+    "angular-ui": "latest"
   }
 }

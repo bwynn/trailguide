@@ -2,7 +2,10 @@ const express = require('express'),
       app = express(),
       bodyParser = require('body-parser'),
       mongoose = require('mongoose'),
-      morgan = require('morgan');
+      morgan = require('morgan'),
+      passport = require('passport'),
+      flash = require('connect-flash'),
+      session = require('express-session');
 
 // config
 // =============================================================================
@@ -27,6 +30,9 @@ const options = {
 // connect to db
 mongoose.connect(db.db);
 
+// add passport config
+require('./config/passport')(passport);
+
 // set up mongoose connection for filestack
 const newConnect = mongoose.connection;
 
@@ -35,15 +41,22 @@ newConnect.on('error', console.error.bind(console, 'connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// log all req/res to console
 app.use(morgan('dev'));
 
 // set static files path
 app.use(express.static(__dirname + '/public'));
 
+// authentication setup
+app.use(session({secret: 'r1deB*k3'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 // routes
 // =============================================================================
-require('./routes/admin_routes')(app);
-require('./routes/app_routes')(app);
+require('./routes/admin_routes')(app, passport);
+require('./routes/app_routes')(app, passport);
 
 // server
 // =============================================================================
