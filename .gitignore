@@ -1,1 +1,4 @@
 /node_modules
+/public/libs
+.DS_Store
+.git
