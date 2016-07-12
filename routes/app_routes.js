@@ -13,7 +13,7 @@ module.exports = function(app, passport) {
   // post
   app.post('/api/login', passport.authenticate('local-login', {
     successRedirect: '/dashboard', // redirect to the dashboard page
-    failureRedirect: '/login'
+    failureRedirect: '/'
   }));
 
   // signup
@@ -25,15 +25,19 @@ module.exports = function(app, passport) {
   // post
   app.post('/api/signup', passport.authenticate('local-signup', {
     successRedirect: '/dashboard',
-    failureRedirect: '/signup',
+    failureRedirect: '/',
     failureFlash: true
   }));
 
   // front end routes
   // ===========================================================================
-  app.get('/login', function(req, res) {
+  app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, "../public/views/index.html"));
   });
+
+  app.get('/dashboard', loggedIn, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/views/index.html"));
+  })
 };
 
 function loggedIn(req, res, next) {
