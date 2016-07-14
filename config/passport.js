@@ -41,6 +41,8 @@ module.exports = function(passport) {
 
           newUser.creds.email = email;
           newUser.creds.password = newUser.generateHash(password);
+          newUser.creds.author = false;
+          newUser.creds.admin = false;
 
           newUser.save(function(err) {
             if (err) {

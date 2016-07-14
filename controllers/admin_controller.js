@@ -30,10 +30,10 @@ exports.createUser = function(req, res) {
 };
 
 // PUT - /update_user
-exports.updateUser = function(req, res) {
+exports.adminUpdateUser = function(req, res) {
 
   User.find(function(err, user) {
-    User.update({_id: req.session.passport.user}, {
+    User.update({_id: req.body.id}, {
       "creds.password": req.body.password,
       "creds.author": req.body.author,
       "creds.admin": req.body.admin,

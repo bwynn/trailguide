@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
 // back end routes
 // =============================================================================
   const adminCtrl = require('../controllers/admin_controller');
@@ -11,5 +11,5 @@ module.exports = function(app) {
   app.post('/api/create_user', adminCtrl.createUser);
 
   // update user - PUT
-  app.put('api/update_user', adminCtrl.updateUser);
+  app.put('/admin_update_user', adminCtrl.adminUpdateUser);
 };
