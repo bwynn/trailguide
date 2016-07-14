@@ -7,6 +7,7 @@ const TrailSchema = new Schema({
     lat: String,
     lng: String,
   },
+  featuredImg: {type: Schema.Types.Mixed},
   keywords: [String],
   pictures: [{type: Schema.Types.Mixed}],
   profile: {
