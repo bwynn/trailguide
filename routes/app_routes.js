@@ -36,6 +36,7 @@ module.exports = function(app, passport) {
   });
 
   app.get('/dashboard', loggedIn, function(req, res) {
+    //console.log(req);
     res.sendFile(path.join(__dirname, "../public/views/index.html"));
   })
 };
@@ -47,4 +48,4 @@ function loggedIn(req, res, next) {
   }
 
   res.redirect('/login');
-};
+}

@@ -25,6 +25,11 @@ const UserSchema = new Schema({
     firstname: String,
     lastname: String,
     picture: {type: Schema.Types.Mixed}
+  },
+  fitness: {
+    experience: String,
+    level: String,
+    preference: String
   }
 });
 

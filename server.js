@@ -56,6 +56,7 @@ app.use(flash());
 // routes
 // =============================================================================
 require('./routes/admin_routes')(app, passport);
+require('./routes/profile_routes')(app, passport);
 require('./routes/app_routes')(app, passport);
 
 // server
