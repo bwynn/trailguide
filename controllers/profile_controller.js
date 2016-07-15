@@ -113,7 +113,7 @@ exports.updateBike = function(req, res) {
 exports.deleteBike = function(req, res) {
   User.findOne({_id: req.session.passport.user}, function(err, user) {
     User.update({}, {
-      $pull: {bikes: {$elemMatch: {"_id": req.body.bikeID}}}
+      $pull: {bikes: {$elemMatch: {"bikes.$._id": req.body.bikeID}}}
     }, {
 
     },  function(err, user) {
