@@ -3,20 +3,20 @@ const mongoose = require('mongoose'),
       Review = require('./review_model');
 
 const TrailSchema = new Schema({
+  title: String,
   coords: {
     lat: String,
     lng: String,
   },
   featuredImg: {type: Schema.Types.Mixed},
   keywords: [String],
-  pictures: [{type: Schema.Types.Mixed}],
   profile: {
     description: String,
     fitnessLevel: String,
     skillLevel: String,
     access: String,
   },
-  userReviews: [{Review.schema}]
+  userReviews: [Review.schema]
 });
 
 module.exports = mongoose.model('Trail', TrailSchema);
