@@ -1,4 +1,5 @@
-const Trail = require('../models/trail_model');
+const Trail = require('../models/trail_model'),
+      Review = require('../models/review_model');
 
 // get all trails
 // /get_all_trails - GET
@@ -98,5 +99,53 @@ exports.removeTrail = function(req, res) {
   });
 };
 
-// set featured image
 // add keywords
+
+// add review
+// /add_review - PUT
+exports.addReview = function(req, res) {
+
+  console.log(req.body);
+  Trail.findOne({_id: req.body.id}, function(err, trail) {
+
+    const review = new Review();
+
+    review.authorID = req.body.authorID;
+    review.rating = req.body.rating;
+    review.comment = req.body.comment;
+    review.pictures = req.body.pictures;
+
+    console.log(review);
+
+    Trail.update({title: req.body.title}, {
+      $push: {userReviews: review}
+    }, function(err, trail) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(trail);
+    });
+  });
+};
+
+// edit review
+// /edit_review - PUT
+exports.editReview = function(req, res) {
+  Trail.findOne({_id: req.body.id}, function(err, trail) {
+    Trail.update({userReviews: {$elemMatch: {"_id": req.body.reviewID}}},
+      {$set: {
+          "userReviews.$.rating": req.body.rating,
+          "userReviews.$.comment": req.body.comment,
+          "userReviews.$.pictures": req.body.pictures
+      }}, function(err, trail) {
+        if (err) {
+          res.send(err);
+        }
+
+        res.json(trail);
+      });
+    });
+};
+
+// delete review

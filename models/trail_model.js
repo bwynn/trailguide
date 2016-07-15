@@ -16,7 +16,7 @@ const TrailSchema = new Schema({
     skillLevel: String,
     access: String,
   },
-  userReviews: [Review.schema]
+  userReviews: [{type: Schema.Types.Mixed}]
 });
 
 module.exports = mongoose.model('Trail', TrailSchema);

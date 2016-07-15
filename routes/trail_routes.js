@@ -19,6 +19,12 @@ module.exports = function(app, passport) {
 
   // remove trail
   app.put('/remove_trail', trailCtrl.removeTrail);
+
+  // add review
+  app.put('/add_review', trailCtrl.addReview);
+
+  // edit review
+  app.put('/edit_review', trailCtrl.editReview);
 };
 
 function loggedIn(req, res, next) {
