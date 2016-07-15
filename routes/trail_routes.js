@@ -13,6 +13,12 @@ module.exports = function(app, passport) {
 
   // update trail
   app.put('/update_trail', trailCtrl.updateTrail);
+
+  // add featured image
+  app.put('/add_featured_image', trailCtrl.addFeaturedImage);
+
+  // remove trail
+  app.put('/remove_trail', trailCtrl.removeTrail);
 };
 
 function loggedIn(req, res, next) {

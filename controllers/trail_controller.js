@@ -49,16 +49,16 @@ exports.addTrail = function(req, res) {
 exports.updateTrail = function(req, res) {
 
   console.log(req.body);
-    Trail.findOne({_id: req.body.id}, function(err, trail) {
-      Trail.update({
-        "trail.coords.lat": req.body.lat,
-        "trail.coords.lng": req.body.lng,
-        "trail.profile.description": req.body.description,
-        "trail.profile.fitnessLevel": req.body.fitnessLevel,
-        "trail.profile.skillLevel": req.body.skillLevel,
-        "trail.profile.access": req.body.access,
-        "trail.title": req.body.title,
-        "trail.featuredImg": req.body.featuredImg
+    Trail.find({title: req.body.title}, function(err, trail) {
+      Trail.update({_id: req.body.id}, {
+        "coords.lat": req.body.lat,
+        "coords.lng": req.body.lng,
+        "profile.description": req.body.description,
+        "profile.fitnessLevel": req.body.fitnessLevel,
+        "profile.skillLevel": req.body.skillLevel,
+        "profile.access": req.body.access,
+        "title": req.body.title,
+        "featuredImg": req.body.featuredImg
       }, function(err, trail) {
         if (err) {
           res.send(err);
@@ -70,8 +70,33 @@ exports.updateTrail = function(req, res) {
 };
 
 // add featured image
+// /add_featured_image - PUT
+exports.addFeaturedImage = function(req, res) {
+    Trail.find({title: req.body.title}, function(err, trail) {
+      Trail.update({_id: req.body.id}, {
+        "featuredImg": req.body.featuredImg
+      }, function(err, trail) {
+        if (err) {
+          res.send(err);
+        }
+
+        res.json(trail);
+      });
+    });
+};
 
 // remove trail
+exports.removeTrail = function(req, res) {
+  Trail.find({title: req.body.title}, function(err, trail) {
+    Trail.remove({_id: req.body.id}, function(err, trail) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json({message: "Trail successfully removed."});
+    });
+  });
+};
 
 // set featured image
 // add keywords
