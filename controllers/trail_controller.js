@@ -132,6 +132,8 @@ exports.addReview = function(req, res) {
 // edit review
 // /edit_review - PUT
 exports.editReview = function(req, res) {
+
+  console.log(req.body);
   Trail.findOne({_id: req.body.id}, function(err, trail) {
     Trail.update({userReviews: {$elemMatch: {"_id": req.body.reviewID}}},
       {$set: {
@@ -149,3 +151,17 @@ exports.editReview = function(req, res) {
 };
 
 // delete review
+// /delete_review - PUT
+exports.deleteReview = function(req, res) {
+  Trail.findOne({_id: req.body.id}, function(err, trail) {
+    Trail.update({}, {$pull: {
+        userReviews: {_id: req.body.reviewID}
+      }}, function(err, trail) {
+        if (err) {
+          res.send(err);
+        }
+
+        res.json(trail);
+      });
+  });
+};
