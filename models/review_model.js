@@ -3,6 +3,7 @@ const mongoose = require('mongoose'),
 
 const ReviewSchema = new Schema({
   authorID: String,
+  trailID: String,
   rating: Number,
   comment: String,
   pictures: [{type: Schema.Types.Mixed}],
