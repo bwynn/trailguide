@@ -1,6 +1,6 @@
 const reviewCtrl = require('../controllers/review_controller');
 
-exports.module = function(app, passport) {
+module.exports = function(app, passport) {
 
   // get all reviews
   app.get('/get_reviews', reviewCtrl.getReviews);
@@ -15,11 +15,20 @@ exports.module = function(app, passport) {
   app.post('/get_review', reviewCtrl.getReviewByID);
 
   // add review
-  app.post('/add_review', reviewCtrl.addReview);
+  app.post('/add_review', loggedIn, reviewCtrl.addReview);
 
   // update review
-  app.put('/update_review', reviewCtrl.updateReview);
+  app.put('/update_review', loggedIn, reviewCtrl.updateReview);
 
   // delete review
-  app.put('/delete_review', reviewCtrl.deleteReview);
+  app.put('/delete_review', loggedIn, reviewCtrl.deleteReview);
 };
+
+function loggedIn(req, res, next) {
+  // if authenticated
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  res.redirect('/login');
+}
