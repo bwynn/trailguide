@@ -59,6 +59,7 @@ require('./routes/admin_routes')(app, passport);
 require('./routes/profile_routes')(app, passport);
 require('./routes/trail_routes')(app, passport);
 require('./routes/review_routes')(app, passport);
+require('./routes/query_routes')(app);
 require('./routes/app_routes')(app, passport);
 
 // server

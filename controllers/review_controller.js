@@ -1,4 +1,5 @@
-const Review = require("../models/review_model");
+const Review = require("../models/review_model"),
+      Trail = require("../models/trail_model");
 
 // get reviews
 // /get_reviews - GET
