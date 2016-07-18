@@ -29,6 +29,15 @@ module.exports = function(app, passport) {
     failureFlash: true
   }));
 
+  // log out
+  // ---------------------------------------------------------------------------
+  app.get('/logout', function(req, res) {
+    req.logOut();
+    req.session.destroy(function() {
+      res.redirect('/api/login');
+    });
+  });
+
   // front end routes
   // ===========================================================================
   app.get('/', function(req, res) {

@@ -4,7 +4,7 @@ const Trail = require('../models/trail_model'),
 // query by keyword
 // /find_by_keyword - POST
 exports.findByKeyword = function(req, res) {
-  Trail.find({keywords: {$in: [req.body.keywords]}}, function(err, trails) {
+  Trail.find({}, {keywords: {$in: [req.body.keywords]}}, function(err, trails) {
     if (err) {
       res.send(err);
     }
