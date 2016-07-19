@@ -2,6 +2,12 @@
   "name": "trailguide",
   "version": "1.0.0",
   "main": "server.js",
+  "description": "Mountain Bike Trail Guide application, using Node, MongoDb, Express, and Angular.",
+  "author": "Brian Wynn <brian.wynn83@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bwynn/trailguide.git"
+  },
   "dependencies": {
     "express": "latest",
     "body-parser": "latest",
