@@ -3,7 +3,6 @@ const User = require('../models/user_model');
 // Get Profile
 // /get_profile - POST
 exports.getProfile = function(req, res) {
-  console.log(req);
   User.findOne({_id: req.session.passport.user}, function(err, user) {
 
     res.json(user);
@@ -90,7 +89,6 @@ exports.addBike = function(req, res) {
 // Update Bike
 // /update_bike - PUT
 exports.updateBike = function(req, res) {
-  console.log(req.body);
   User.findOne({_id: req.session.passport.user}, function(err, user) {
     User.update({bikes: {$elemMatch: {"_id": req.body.bikeID}}},
       {$set: {

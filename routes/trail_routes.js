@@ -17,6 +17,12 @@ module.exports = function(app, passport) {
   // add featured image
   app.put('/add_featured_image', trailCtrl.addFeaturedImage);
 
+  // add keywords
+  app.put('/add_keywords', trailCtrl.addKeywords);
+
+  // add trail rating
+  app.put('/add_trail_rating', trailCtrl.addTrailRating);
+
   // remove trail
   app.put('/remove_trail', trailCtrl.removeTrail);
 };

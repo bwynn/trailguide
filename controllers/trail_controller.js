@@ -48,8 +48,6 @@ exports.addTrail = function(req, res) {
 // edit trail
 // /update_trail - PUT
 exports.updateTrail = function(req, res) {
-
-  console.log(req.body);
     Trail.find({title: req.body.title}, function(err, trail) {
       Trail.update({_id: req.body.id}, {
         "coords.lat": req.body.lat,
@@ -87,6 +85,7 @@ exports.addFeaturedImage = function(req, res) {
 };
 
 // remove trail
+// /remove_trail - PUT
 exports.removeTrail = function(req, res) {
   Trail.find({title: req.body.title}, function(err, trail) {
     Trail.remove({_id: req.body.id}, function(err, trail) {
@@ -100,3 +99,31 @@ exports.removeTrail = function(req, res) {
 };
 
 // add keywords
+// /add_keywords - PUT
+exports.addKeywords = function(req, res) {
+  Trail.update({_id: req.body.id}, {
+    $push: {
+      keywords: req.body.keywords
+    }
+  }, function(err, trail) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(trail);
+  });
+};
+
+// add rating - this route should be called subsequently of /add_review route,
+// intended to push the req.body.rating value or var into defined trail.
+exports.addTrailRating = function(req, res) {
+  Trail.update({_id: req.body.trailID}, {
+    $push: {rating: req.body.rating}
+  }, function(err, trail) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(trail);
+  });
+};
