@@ -1,4 +1,6 @@
 /node_modules
 /public/libs
+/public/css/.sass-cache
+/public/templates
 .DS_Store
 .git
