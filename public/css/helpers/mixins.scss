@@ -1,5 +1,35 @@
+// MEDIA QUERIES
+@mixin medium {
+  @media only screen and (min-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: #{$large}) {
+    @content;
+  }
+}
+
 // mixins
 @mixin strip {
   margin: 0;
   padding: 0;
+}
+
+@mixin content($size) {
+  font-size: $size*.8;
+  line-height: 1.4;
+  &.bold {
+    font-weight: $bold;
+  }
+  &.light {
+    font-weight: $light;
+  }
+  @include medium {
+    font-size: $size*.9;
+  }
+  @include large {
+    font-size: $size;
+  }
 }

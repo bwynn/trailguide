@@ -1,35 +1,65 @@
 // TYPOGRAPHY
 
 // global elems
-h1, h2, h3 {
+h1, h2, h3, p {
   @include strip;
   font-weight: $normal;
 }
 
 // Primary headline box formatting
-.section-headline-container {
-  padding: $horizontal-align;
-  .primary-headline {
-    font-weight: $bold;
-    font-size: $em*2.5;
-  }
-  .secondary-headline {
+.section-headline-container, .section-content-container {
+  padding: $em;
+}
+
+// HEADLINES
+.primary-headline {
+  font-weight: $bold;
+  font-size: $em*1.56;
+  @include medium {
     font-size: $em*2;
   }
-  .third-headline {
+  @include large {
+    font-size: $em*2.5;
+  }
+}
+.secondary-headline {
+  font-size: $em*1.2;
+  @include medium {
+    font-size: $em*1.5;
+  }
+  @include large {
+    font-size: $em*2;
+  }
+}
+.third-headline {
+  font-size: $em;
+  @include medium {
+    font-size: $em*1.2;
+  }
+  @include large {
     font-size: $em*1.5;
   }
 }
 
-.list-item {
-
+// PRIMARY CONTENT
+.primary-content {
+  @include content($em);
 }
 
-.paragraph {
-    &.small {
+.secondary-content {
+  @include content($em*.85);
+}
 
-    }
-    &.bold {
+// lists and list items
+.list {
+  text-decoration: none;
+  @include strip;
+  .list-item {
 
-    }
+  }
+}
+
+// DECORATION CLASSES
+.underline {
+  text-decoration: underline;
 }
