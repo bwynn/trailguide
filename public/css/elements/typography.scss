@@ -9,6 +9,8 @@ h1, h2, h3, p {
 // Primary headline box formatting
 .section-headline-container, .section-content-container {
   padding: $em;
+  width: $full;
+  box-sizing: border-box;
 }
 
 // HEADLINES

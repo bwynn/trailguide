@@ -39,3 +39,9 @@ div, section {
     }
   }
 }
+
+// style guide declarations - exclusive to formatting of style guide
+.style-headline {
+  @include flex;
+  @include align-items;
+}

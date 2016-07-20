@@ -1,4 +1,27 @@
-// MEDIA QUERIES
+// FORMATTING MIXINS
+
+// flexbox mixins
+@mixin flex {
+  -webkit-display: flex;
+  display: flex;
+}
+
+@mixin flex-wrap {
+  -webkit-flex-direction: row wrap;
+  flex-direction: row wrap;
+}
+
+@mixin align-items {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixin align-content-center {
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+// media query mixins
 @mixin medium {
   @media only screen and (min-width: #{$medium}) {
     @content;
@@ -11,7 +34,7 @@
   }
 }
 
-// mixins
+// content mixins
 @mixin strip {
   margin: 0;
   padding: 0;
@@ -20,6 +43,7 @@
 @mixin content($size) {
   font-size: $size*.8;
   line-height: 1.4;
+  margin-bottom: $size/2;
   &.bold {
     font-weight: $bold;
   }
