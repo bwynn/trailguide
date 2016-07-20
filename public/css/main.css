@@ -1,10 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Oxygen:300,400,700";
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #2f2f2f;
-  background-color: #fafafa; }
+  background-color: #FDFFFD; }
 
 div, section {
   margin: 0;
@@ -116,5 +116,41 @@ h1, h2, h3, p {
 
 .underline {
   text-decoration: underline; }
+
+.btn {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-family: "Oxygen", sans-serif;
+  padding: 18px 0;
+  margin: 18px 0;
+  color: #FDFFFD;
+  border-radius: 2.25px;
+  transition: 0.3s all ease-in-out; }
+  .btn:focus {
+    outline: none; }
+  .btn:hover {
+    cursor: pointer;
+    color: #2f2f2f; }
+  .btn.primary-action {
+    background-color: #4ED65F;
+    border: 1.125px solid #4ED65F;
+    box-sizing: border-box; }
+    .btn.primary-action:hover {
+      background-color: #0AB71F;
+      border: 1.125px solid #74E482;
+      box-sizing: border-box; }
+  .btn.secondary-action {
+    background-color: #FF655D;
+    border: 1.125px solid #FF655D;
+    box-sizing: border-box; }
+    .btn.secondary-action:hover {
+      background-color: #EC170C;
+      border: 1.125px solid #FF8882;
+      box-sizing: border-box; }
+  @media only screen and (min-width: 700px) {
+    .btn {
+      width: auto;
+      padding: 18px; } }
 
 /*# sourceMappingURL=main.css.map */

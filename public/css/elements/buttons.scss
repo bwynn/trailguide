@@ -1,9 +1,38 @@
-// primary actions
-.primary-action {
-
-}
-
-// secondary actions
-.secondary-action {
-  
+.btn {
+  display: $block;
+  width: $full;
+  font-size: $em;
+  font-family: $font;
+  padding: $vertical-align;
+  margin: $vertical-align;
+  color: $white;
+  border-radius: $em/8;
+  @include transition(.3s, ease-in-out);
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $black;
+  }
+  // primary actions
+  &.primary-action {
+    @include buttons($primary);
+    &:hover {
+      background-color: $primary-dark;
+      @include borders($primary-light);
+    }
+  }
+  // secondary actions
+  &.secondary-action {
+    @include buttons($secondary);
+    &:hover {
+      background-color: $secondary-dark;
+      @include borders($secondary-light);
+    }
+  }
+  @include medium {
+    width: auto;
+    padding: $em;
+  }
 }

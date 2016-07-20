@@ -57,3 +57,17 @@
     font-size: $size;
   }
 }
+
+@mixin transition($timing, $easing) {
+  transition: $timing all $easing;
+}
+
+@mixin borders($color) {
+  border: $em/16 solid $color;
+  box-sizing: border-box;
+}
+
+@mixin buttons($color) {
+  background-color: $color;
+  @include borders($color);
+}
