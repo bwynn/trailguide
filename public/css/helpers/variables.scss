@@ -1,1 +1,18 @@
-// variables 
+// variables
+
+// sizing/spacing vars
+$em: 18px;
+$full: 100%;
+$full-width: 100vw;
+$full-height: 100vh;
+$max-width: 1200px;
+$center: 0 auto; // margin: 0 auto;
+$center-spaced: $em auto;
+$inherit: inherit;
+$horizontal-align: 0 $em;
+$vertical-align: $em 0;
+
+// font weights
+$normal: 400;
+$light: 300;
+$bold: 700;

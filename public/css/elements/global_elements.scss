@@ -1,4 +1,30 @@
+// global elements declarations
+body {
+  font-family: 'Oxygen', sans-serif;
+  font-size: $em;
+  font-weight: $normal;
+}
+
+div, section {
+  @include strip;
+}
+
+// global class declarations
 .main-body {
-  margin: 0;
-  padding: 0;
+  @include strip;
+  width: $full;
+  min-height: $full-height;
+  .outer-wrapper {
+    width: $inherit;
+    min-height: $inherit;
+    .content-section {
+      width: $full;
+      min-height: $em*15.625;
+      .inner-wrapper {
+        max-width: $max-width;
+        width: $full;
+        margin: $center;
+      }
+    }
+  }
 }

@@ -1,5 +1,42 @@
-.main-body {
+@import "https://fonts.googleapis.com/css?family=Oxygen:300,400,700";
+body {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 18px;
+  font-weight: 400; }
+
+div, section {
   margin: 0;
   padding: 0; }
+
+.main-body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; }
+  .main-body .outer-wrapper {
+    width: inherit;
+    min-height: inherit; }
+    .main-body .outer-wrapper .content-section {
+      width: 100%;
+      min-height: 281.25px; }
+      .main-body .outer-wrapper .content-section .inner-wrapper {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto; }
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400; }
+
+.section-headline-container {
+  padding: 0 18px; }
+  .section-headline-container .primary-headline {
+    font-weight: 700;
+    font-size: 45px; }
+  .section-headline-container .secondary-headline {
+    font-size: 36px; }
+  .section-headline-container .third-headline {
+    font-size: 27px; }
 
 /*# sourceMappingURL=main.css.map */

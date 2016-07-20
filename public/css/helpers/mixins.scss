@@ -1,1 +1,5 @@
-// mixins 
+// mixins
+@mixin strip {
+  margin: 0;
+  padding: 0;
+}
