@@ -140,6 +140,8 @@ h1, h2, h3, p {
       background-color: #0AB71F;
       border: 1.125px solid #74E482;
       box-sizing: border-box; }
+    .btn.primary-action.submit {
+      padding: 18px 36px; }
   .btn.secondary-action {
     background-color: #FF655D;
     border: 1.125px solid #FF655D;
@@ -152,5 +154,38 @@ h1, h2, h3, p {
     .btn {
       width: auto;
       padding: 18px; } }
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+  outline: none; }
+
+.form {
+  padding: 18px 0;
+  background-color: #2f2f2f;
+  color: #FDFFFD; }
+  .form .form-group {
+    margin: 18px;
+    margin-bottom: 36px; }
+    .form .form-group .label, .form .form-group .text-area, .form .form-group .text-input, .form .form-group .select, .form .form-group .password-input, .form .form-group .email-input {
+      display: block;
+      width: 100%; }
+    .form .form-group .text-area, .form .form-group .text-input, .form .form-group .select, .form .form-group .option, .form .form-group .password-input, .form .form-group .email-input {
+      margin: 18px 0;
+      box-sizing: border-box;
+      font-size: 18px; }
+    .form .form-group .text-area, .form .form-group .text-input, .form .form-group .password-input, .form .form-group .email-input {
+      border: none;
+      border-radius: 2.25px;
+      padding: 4.5px; }
+    .form .form-group .label {
+      font-size: 21.6px; }
+    .form .form-group .text-area {
+      min-height: 72px; }
+    .form .form-group .select {
+      outline: none;
+      -webkit-appearance: none;
+      display: block;
+      padding: 2.25px;
+      font-size: 18px;
+      border-radius: 2.25px; }
 
 /*# sourceMappingURL=main.css.map */

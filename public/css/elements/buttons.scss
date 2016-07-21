@@ -22,6 +22,9 @@
       background-color: $primary-dark;
       @include borders($primary-light);
     }
+    &.submit {
+      padding: $em $em*2;
+    }
   }
   // secondary actions
   &.secondary-action {

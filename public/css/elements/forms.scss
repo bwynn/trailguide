@@ -1,4 +1,60 @@
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
 // form
 .form {
-  
+  padding: $vertical-align;
+  background-color: $black;
+  color: $white;
+  // default formatting
+  .form-group {
+    margin: $em;
+    margin-bottom: $em*2;
+    .label, .text-area, .text-input, .select, .password-input, .email-input {
+      display: block;
+      width: $full;
+    }
+    .text-area, .text-input, .select, .option, .password-input, .email-input {
+      margin: $vertical-align;
+      box-sizing: border-box;
+      font-size: $em;
+    }
+    .text-area, .text-input, .password-input, .email-input {
+      border: none;
+      border-radius: $em/8;
+      padding: $em/4;
+    }
+    // label elements
+    .label {
+      font-size: $em*1.2;
+    }
+    // input elements
+    .text-input {
+
+    }
+    // textarea elements
+    .text-area {
+      min-height: $em*4;
+    }
+    // select elements
+    .select {
+      outline: none;
+      -webkit-appearance: none;
+      display: block;
+      padding: $em/8;
+      font-size: $em;
+      border-radius: $em/8;
+    }
+    // checkbox elements
+    .checkbox {
+
+    }
+    // option elements
+    .option {
+
+    }
+  }
 }
