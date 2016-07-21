@@ -82,7 +82,7 @@ h1, h2, h3, p {
 .primary-content {
   font-size: 14.4px;
   line-height: 1.4;
-  margin-bottom: 9px; }
+  margin-bottom: 18px; }
   .primary-content.bold {
     font-weight: 700; }
   .primary-content.light {
@@ -97,7 +97,7 @@ h1, h2, h3, p {
 .secondary-content {
   font-size: 12.24px;
   line-height: 1.4;
-  margin-bottom: 7.65px; }
+  margin-bottom: 15.3px; }
   .secondary-content.bold {
     font-weight: 700; }
   .secondary-content.light {
@@ -160,8 +160,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .form {
   padding: 18px 0;
-  background-color: #2f2f2f;
-  color: #FDFFFD; }
+  background-color: #E6F0E5;
+  border: 2.25px solid #2f2f2f;
+  color: #2f2f2f;
+  border-radius: 2.25px; }
   .form .form-group {
     margin: 18px;
     margin-bottom: 36px; }
@@ -173,9 +175,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
       box-sizing: border-box;
       font-size: 18px; }
     .form .form-group .text-area, .form .form-group .text-input, .form .form-group .password-input, .form .form-group .email-input {
-      border: none;
+      border: 1.125px solid #0AB71F;
+      box-sizing: border-box;
       border-radius: 2.25px;
-      padding: 4.5px; }
+      padding: 9px; }
     .form .form-group .label {
       font-size: 21.6px; }
     .form .form-group .text-area {
@@ -186,6 +189,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
       display: block;
       padding: 2.25px;
       font-size: 18px;
-      border-radius: 2.25px; }
+      border-radius: 2.25px;
+      border: 1.125px solid #74E482;
+      box-sizing: border-box; }
 
 /*# sourceMappingURL=main.css.map */

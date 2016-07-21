@@ -7,8 +7,10 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 // form
 .form {
   padding: $vertical-align;
-  background-color: $black;
-  color: $white;
+  background-color: $grey;
+  border: $em/8 solid $black;
+  color: $black;
+  border-radius: $em/8;
   // default formatting
   .form-group {
     margin: $em;
@@ -23,9 +25,9 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: $em;
     }
     .text-area, .text-input, .password-input, .email-input {
-      border: none;
+      @include borders($primary-dark);
       border-radius: $em/8;
-      padding: $em/4;
+      padding: $em/2;
     }
     // label elements
     .label {
@@ -47,6 +49,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
       padding: $em/8;
       font-size: $em;
       border-radius: $em/8;
+      @include borders($primary-light);
     }
     // checkbox elements
     .checkbox {
