@@ -39,7 +39,12 @@ div, section {
   -webkit-display: flex;
   display: flex;
   -webkit-align-items: center;
-  align-items: center; }
+  align-items: center;
+  background-image: url("../templates/img/background_hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #FDFFFD;
+  min-height: 360px; }
 
 h1, h2, h3, p {
   margin: 0;
@@ -157,13 +162,15 @@ h1, h2, h3, p {
 
 .img {
   width: 100%;
-  background-color: #E6F0E5; }
+  background-color: #E6F0E5;
+  display: block; }
   .img.portrait {
     width: 40vw;
     height: auto; }
     @media only screen and (min-width: 700px) {
       .img.portrait {
-        width: 30vw; } }
+        width: 30vw;
+        margin: 0 auto; } }
     @media only screen and (min-width: 950px) {
       .img.portrait {
         width: 20vw; } }
