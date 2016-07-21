@@ -22,9 +22,6 @@
       background-color: $primary-dark;
       @include borders($primary-light);
     }
-    &.submit {
-      padding: $em $em*2;
-    }
   }
   // secondary actions
   &.secondary-action {
@@ -32,6 +29,9 @@
     &:hover {
       background-color: $secondary-dark;
       @include borders($secondary-light);
+    }
+    &.submit {
+      padding: $em $em*2;
     }
   }
   @include medium {

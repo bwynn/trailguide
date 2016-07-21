@@ -16,6 +16,11 @@
   align-items: center;
 }
 
+@mixin justify-content {
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
 @mixin align-content-center {
   -webkit-align-content: center;
   align-content: center;

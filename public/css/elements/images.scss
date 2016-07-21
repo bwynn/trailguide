@@ -1,1 +1,18 @@
-// images 
+// images
+.img {
+  width: $full;
+  background-color: $grey;
+  &.portrait {
+    width: 40vw;
+    height: auto;
+    @include medium {
+      width: 30vw;
+    }
+    @include large {
+      width: 20vw;
+    }
+  }
+  &.featured-img {
+    height: auto;
+  }
+}

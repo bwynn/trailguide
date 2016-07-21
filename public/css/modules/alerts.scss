@@ -1,1 +1,23 @@
-// alerts 
+// alerts
+// alerts class is specific to the style guide, this class simply creates a wrapper for
+// the style guide
+.alerts {
+  width: $full;
+  height: $em*25;
+  background-color: $black;
+}
+
+.alert-modal {
+  @include flex;
+  @include align-items;
+  @include justify-content;
+  height: $full;
+  width: $full;
+  .alert-box {
+    height: $full;
+    width: $full;
+    max-height: $em*20;
+    max-width: $em*30;
+    background-color: $white;
+  }
+}
