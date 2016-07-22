@@ -1,0 +1,37 @@
+.rating-stars {
+  float: left;
+  border: none;
+  input {
+    display: none;
+  }
+  label {
+    @include transition(.2s, ease-in-out);
+    float: right;
+    &:before {
+      margin: 5px;
+      font-size: $em*1.25;
+      font-family: FontAwesome;
+      display: inline-block;
+      content: "\f005";
+    }
+  }
+  .half {
+    &:before {
+      position: absolute;
+      content: "\f089";
+    }
+  }
+}
+
+.rating-stars:not(:checked) > label:hover,
+.rating-stars:not(:checked) > label:hover ~ label,
+.rating-stars > input:checked ~ label {
+  color: #FFD700;
+}
+
+.rating-stars > input:checked + label:hover,
+.rating-stars > input:checked ~ label:hover,
+.rating-stars > label:hover ~ input:checked ~ label,
+.rating-stars > input:checked ~ label {
+  color: #FFED85;
+}

@@ -5,6 +5,19 @@
 
 // import any stylesheet dependencies
 @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700';
+$fa-font-path: "../libs/font-awesome/fonts";
+@import '../libs/font-awesome/scss/font-awesome.scss';
+
+/*@font-face {
+  font-family: "FontAwesome";
+  src: url("../libs/font-awesome/fonts/fontawesome-webfont.eot");
+  src: url("../libs/font-awesome/fonts/fontawesome-webfont.svg");
+  src: url("../libs/font-awesome/fonts/fontawesome-webfont.ttf");
+  src: url("../libs/font-awesome/fonts/fontawesome-webfont.woff");
+  src: url("../libs/font-awesome/fonts/fontawesome-webfont.woff2");
+  font-weight: normal;
+  font-style: normal;
+}*/
 
 // import local styles
 @import "helpers/variables";
@@ -17,5 +30,6 @@
 @import "elements/forms";
 @import "components/header";
 @import "components/footer";
+@import "components/stars";
 @import "modules/alerts";
 @import "modules/modals";
