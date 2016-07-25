@@ -20,6 +20,18 @@ angular.module('AppRoutes', [])
         templateUrl: 'views/dashboard.html',
         controller: 'dashboardController'
       }).
+      when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'aboutController'
+      }).
+      when('contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'contactController'
+      }).
+      when('/find_trails', {
+        templateUrl: 'views/trail_query.html',
+        controller: 'trailQueryController'
+      }).
       otherwise('/login', {
         templateUrl: 'views/login.html',
         controller: 'loginController'
