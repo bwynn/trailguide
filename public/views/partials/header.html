@@ -1,21 +1,26 @@
-<div class="nav-headline">
-  <div class="section-headline-container">
-    <a href="/"><h1>MtnBikeTrailGuide.com</h1></a>
+<div class="navbar-wrapper">
+  <div class="nav-headline">
+    <div class="global-header-logo">
+      <a href="/dashboard">
+        <!-- <span>This is where the logo will be placed</span> -->
+        <h1 class="logo-headline">MtnBikeTrailGuide.com</h1>
+      </a>
+    </div>
+  </div>
+  <div class="nav-menu-button" ng-click="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
   </div>
 </div>
-<div class="nav-button">
-  <span class="bar"></span>
-  <span class="bar"></span>
-  <span class="bar"></span>
-</div>
-<nav class="drop-nav">
-  <ul>
-    <li ng-hide="loggedIn"><a href="/login">Log In</a></li>
-    <li ng-hide="loggedIn"><a href="/signup">Sign Up</a></li>
-    <li ng-show="loggedIn"><a href="/dashboard">Profile</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/find_trails">Find Trails</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li ng-show="loggedIn"><a href="/logout">Log Out</a></li>
+<nav class="nav-menu-items" ng-show="showMenu">
+  <ul class="menu-item-list">
+    <li ng-hide="loggedIn" class="list-item"><a href="/login">Log In</a></li>
+    <li ng-hide="loggedIn" class="list-item"><a href="/signup">Sign Up</a></li>
+    <li ng-show="loggedIn" class="list-item"><a href="/dashboard">Profile</a></li>
+    <li class="list-item"><a href="/about">About</a></li>
+    <li class="list-item"><a href="/find_trails">Find Trails</a></li>
+    <li class="list-item"><a href="/contact">Contact</a></li>
+    <li ng-show="loggedIn" class="list-item"><a href="/logout">Log Out</a></li>
   </ul>
 </nav>

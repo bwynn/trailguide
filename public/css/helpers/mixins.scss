@@ -7,8 +7,8 @@
 }
 
 @mixin flex-wrap {
-  -webkit-flex-direction: row wrap;
-  flex-direction: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 @mixin align-items {
