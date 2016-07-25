@@ -9,6 +9,7 @@
     min-width: $full;
     .nav-headline {
       .global-header-logo {
+        margin-left: $em;
         > a {
           color: $white;
           text-decoration: none;
@@ -17,7 +18,7 @@
           }
         }
         .logo-headline {
-
+          font-size: $em*1.8;
         }
       }
     }
@@ -25,16 +26,20 @@
       height: $em*2;
       width: $em*2;
       @include transition(.2s, ease-in);
+      margin: $em*.2;
       margin-left: auto;
       .bar {
         height: $em*.33;
         width: $em*1.5;
         margin: $em*.231 $em*.2;
-        border-radius: $em/3;
+        border-radius: 3px;
         background-color: $white;
         display: block;
         box-sizing: border-box;
         @include transition(.2s, ease-in);
+        &:first-child {
+          margin-top: $em*.33;
+        }
       }
       &:hover {
         cursor: pointer;

@@ -2424,25 +2424,32 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     display: flex;
     width: 100%;
     min-width: 100%; }
-    .global-navigation .navbar-wrapper .nav-headline .global-header-logo > a {
-      color: #FDFFFD;
-      text-decoration: none; }
-      .global-navigation .navbar-wrapper .nav-headline .global-header-logo > a:hover {
-        text-decoration: underline; }
+    .global-navigation .navbar-wrapper .nav-headline .global-header-logo {
+      margin-left: 18px; }
+      .global-navigation .navbar-wrapper .nav-headline .global-header-logo > a {
+        color: #FDFFFD;
+        text-decoration: none; }
+        .global-navigation .navbar-wrapper .nav-headline .global-header-logo > a:hover {
+          text-decoration: underline; }
+      .global-navigation .navbar-wrapper .nav-headline .global-header-logo .logo-headline {
+        font-size: 32.4px; }
     .global-navigation .navbar-wrapper .nav-menu-button {
       height: 36px;
       width: 36px;
       transition: 0.2s all ease-in;
+      margin: 3.6px;
       margin-left: auto; }
       .global-navigation .navbar-wrapper .nav-menu-button .bar {
         height: 5.94px;
         width: 27px;
         margin: 4.158px 3.6px;
-        border-radius: 6px;
+        border-radius: 3px;
         background-color: #FDFFFD;
         display: block;
         box-sizing: border-box;
         transition: 0.2s all ease-in; }
+        .global-navigation .navbar-wrapper .nav-menu-button .bar:first-child {
+          margin-top: 5.94px; }
       .global-navigation .navbar-wrapper .nav-menu-button:hover {
         cursor: pointer;
         background-color: #E6F0E5; }
