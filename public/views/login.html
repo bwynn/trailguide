@@ -1,15 +1,22 @@
-<section class="login-form form-section">
-  <form class="form" action="/api/login" method="post">
-    <div class="form-group">
-      <label class="label">Email</label>
-      <input class="text-input" type="email" name="email" name="email" required>
+<div class="outer-wrapper">
+  <section class="login-form content-section">
+    <div class="inner-wrapper">
+      <div class="section-container-headline">
+        <h2 class="primary-headline">Log In</h2>
+      </div>
+      <form class="form" action="/api/login" method="post">
+        <div class="form-group">
+          <label class="label">Email</label>
+          <input class="text-input" type="email" name="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label class="label">Password</label>
+          <input class="text-input" type="password" name="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn primary-action">Submit</button>
+        </div>
+      </form>
     </div>
-    <div class="form-group">
-      <label class="label">Password</label>
-      <input class="text-input" type="password" name="password" name="password" required>
-    </div>
-    <div class="form-group">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-</section>
+  </section>
+</div>

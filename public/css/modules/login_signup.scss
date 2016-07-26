@@ -1,0 +1,10 @@
+.login-form, .signup-form {
+  &.content-section {
+    .section-container-headline {
+      margin: $em*4 $em $em;
+    }
+    .form {
+      background-color: inherit;
+    }
+  }
+}

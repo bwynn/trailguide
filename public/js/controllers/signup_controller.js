@@ -3,4 +3,5 @@ angular.module('SignupCtrl', [])
 
     // set state value for logged in
     $scope.$emit('loggedInEmit', {loggedIn: false});
+    $scope.$emit('signupViewEmit', {signupView: true});
   }]);

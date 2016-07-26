@@ -24,7 +24,7 @@ angular.module('AppRoutes', [])
         templateUrl: 'views/about.html',
         controller: 'aboutController'
       }).
-      when('contact', {
+      when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'contactController'
       }).

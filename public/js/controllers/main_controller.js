@@ -9,6 +9,16 @@ angular.module('MainCtrl', [])
       $rootScope.loggedIn = args.loggedIn;
     });
 
+    $rootScope.$on('signupViewEmit', function(e, args) {
+      $rootScope.signupView = args.signupView;
+      $rootScope.loginView = false;
+    });
+
+    $rootScope.$on('loginViewEmit', function(e, args) {
+      $rootScope.loginView = args.loginView;
+      $rootScope.signupView = false;
+    });
+
     // toggle menu
     $scope.toggleMenu = function() {
       if ($scope.showMenu) {
