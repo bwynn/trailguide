@@ -2211,7 +2211,10 @@ div, section {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh; }
+  min-height: 100vh;
+  position: absolute;
+  top: 45px;
+  z-index: 1; }
   .main-body .outer-wrapper {
     width: inherit;
     min-height: inherit; }
@@ -2414,11 +2417,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .global-navigation {
   width: 100%;
-  background-color: #2f2f2f;
-  -webkit-display: flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap; }
+  position: relative;
+  z-index: 3;
+  height: 45px;
+  background-color: #2f2f2f; }
   .global-navigation .navbar-wrapper {
     -webkit-display: flex;
     display: flex;
@@ -2455,15 +2457,46 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         background-color: #E6F0E5; }
         .global-navigation .navbar-wrapper .nav-menu-button:hover .bar {
           background-color: #2f2f2f; }
-  .global-navigation .nav-menu-items {
-    width: 33.33333%;
-    margin-left: auto;
-    -webkit-display: flex;
-    display: flex; }
-    .global-navigation .nav-menu-items .menu-item-list {
-      margin-left: auto; }
-      .global-navigation .nav-menu-items .menu-item-list .list-item {
-        text-align: right; }
+
+.nav-menu-items {
+  background-color: #2f2f2f;
+  margin-left: auto;
+  width: 100%;
+  -webkit-display: flex;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  transition: 0.4s all ease-out;
+  transform: translateY(0);
+  box-shadow: 2.25px 2.25px 2.25px 2.25px #2f2f2f; }
+  .nav-menu-items .menu-item-list {
+    width: 100%;
+    padding: 0;
+    list-style-type: none; }
+    @media only screen and (min-width: 700px) {
+      .nav-menu-items .menu-item-list {
+        margin-left: auto; } }
+    .nav-menu-items .menu-item-list .list-item {
+      text-align: center;
+      font-size: 23.4px;
+      width: auto;
+      transition: 0.3s all ease-in; }
+      @media only screen and (min-width: 700px) {
+        .nav-menu-items .menu-item-list .list-item {
+          text-align: right; } }
+      .nav-menu-items .menu-item-list .list-item > a {
+        padding: 14.4px;
+        box-sizing: border-box;
+        color: #FDFFFD;
+        display: block;
+        width: 100%; }
+      .nav-menu-items .menu-item-list .list-item:hover {
+        background-color: #4d4d4d; }
+  .nav-menu-items.ng-hide {
+    transform: translateY(-100%); }
+  @media only screen and (min-width: 700px) {
+    .nav-menu-items {
+      width: 33.33333%; } }
 
 .rating-stars {
   float: left;

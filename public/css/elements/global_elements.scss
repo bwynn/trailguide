@@ -17,6 +17,9 @@ div, section {
   @include strip;
   width: $full;
   min-height: $full-height;
+  position: absolute;
+  top: $em*2.5;
+  z-index: 1;
   .outer-wrapper {
     width: $inherit;
     min-height: $inherit;
