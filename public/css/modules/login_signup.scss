@@ -1,10 +1,19 @@
-.login-form, .signup-form {
-  &.content-section {
-    .section-container-headline {
-      margin: $em*4 $em $em;
-    }
-    .form {
-      background-color: inherit;
+.main-body {
+  .outer-wrapper {
+    .login-form, .signup-form {
+      .inner-wrapper {
+        @include large {
+          max-width: $em*40;
+        }
+      }
+      &.content-section {
+        .section-container-headline {
+          margin: $em*4 $em $em;
+        }
+        .form {
+          background-color: inherit;
+        }
+      }
     }
   }
 }

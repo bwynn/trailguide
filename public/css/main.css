@@ -2548,9 +2548,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     max-width: 540px;
     background-color: #FDFFFD; }
 
-.login-form.content-section .section-container-headline, .signup-form.content-section .section-container-headline {
+@media only screen and (min-width: 950px) {
+  .main-body .outer-wrapper .login-form .inner-wrapper, .main-body .outer-wrapper .signup-form .inner-wrapper {
+    max-width: 720px; } }
+.main-body .outer-wrapper .login-form.content-section .section-container-headline, .main-body .outer-wrapper .signup-form.content-section .section-container-headline {
   margin: 72px 18px 18px; }
-.login-form.content-section .form, .signup-form.content-section .form {
+.main-body .outer-wrapper .login-form.content-section .form, .main-body .outer-wrapper .signup-form.content-section .form {
   background-color: inherit; }
 
 /*# sourceMappingURL=main.css.map */
