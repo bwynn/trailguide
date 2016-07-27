@@ -19,3 +19,22 @@
     }
   }
 }
+
+.bikes-section {
+  .inner-wrapper {
+    .bike-collection-container {
+      @include flex;
+    }
+  }
+}
+
+.experience-section {
+  .inner-wrapper {
+    .section-content-container {
+      .secondary-content {
+        padding: $em*3 0 $em;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

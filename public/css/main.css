@@ -2367,6 +2367,9 @@ h1, h2, h3, p {
     margin: 0 auto; }
   .img.featured-img {
     height: auto; }
+  .img.gallery-img {
+    height: 180px;
+    width: 270px; }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
   outline: none; }
@@ -2560,5 +2563,13 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     text-align: center; }
   .profile-section .section-content-container .section-content-container .primary-content, .profile-section .section-content-container .section-content-container .secondary-content {
     text-align: center; }
+
+.bikes-section .inner-wrapper .bike-collection-container {
+  -webkit-display: flex;
+  display: flex; }
+
+.experience-section .inner-wrapper .section-content-container .secondary-content {
+  padding: 54px 0 18px;
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=main.css.map */
