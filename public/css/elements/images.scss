@@ -4,17 +4,14 @@
   background-color: $grey;
   display: block;
   &.portrait {
-    width: 40vw;
+    width: $em*10;
     height: auto;
-    @include medium {
-      width: 30vw;
-      margin: $center;
-    }
-    @include large {
-      width: 20vw;
-    }
+    margin: $center;
   }
   &.featured-img {
     height: auto;
+  }
+  &.gallery-img {
+
   }
 }

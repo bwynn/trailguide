@@ -25,7 +25,7 @@ div, section {
     min-height: $inherit;
     .content-section {
       width: $full;
-      min-height: $em*7.5;
+      min-height: $em*20;
       @include large {
         min-height: $em*15.625;
       }
@@ -33,12 +33,9 @@ div, section {
         max-width: $max-width;
         width: $full;
         margin: $center;
-        @include medium {
-          max-width: $max-width*1.28;
-        }
-        @include large {
-          max-width: $max-width*1.5714;
-        }
+        /*@include large {
+          max-width: $max-width*1.3;
+        }*/
       }
     }
   }
