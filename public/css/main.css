@@ -2558,6 +2558,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   background-color: inherit;
   color: #2f2f2f; }
 
+.profile-section .section-container-headline, .bikes-section .section-container-headline, .review-section .section-container-headline, .recommended-trails .section-container-headline, .experience-section .section-container-headline {
+  padding-left: 18px; }
+
 .profile-section {
   -webkit-display: flex;
   display: flex;
@@ -2588,8 +2591,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .experience-section .inner-wrapper .section-content-container .section-container-headline {
   margin: 36px 0; }
-.experience-section .inner-wrapper .section-content-container .primary-content.bold {
-  margin: 54px 0 18px; }
+.experience-section .inner-wrapper .section-content-container .primary-content {
+  padding-left: 18px; }
+  .experience-section .inner-wrapper .section-content-container .primary-content.bold {
+    margin: 54px 0 18px; }
 
 .recommended-trails .inner-wrapper .trail-recommendation-container {
   -webkit-display: flex;

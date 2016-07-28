@@ -1,3 +1,9 @@
+.profile-section, .bikes-section, .review-section, .recommended-trails, .experience-section {
+  .section-container-headline {
+    padding-left: $em;
+  }
+}
+
 .profile-section {
   @include flex;
   @include align-items;
@@ -25,6 +31,9 @@
     .bike-collection-container {
       @include flex;
       @include flex-wrap;
+      .section-content-container {
+        //padding: $em 0;
+      }
       .bike-details-container {
         width: $full;
         @include medium {
@@ -45,6 +54,7 @@
         margin: $em*2 0;
       }
       .primary-content {
+        padding-left: $em;
         &.bold {
           margin: $em*3 0 $em;
         }
@@ -58,6 +68,9 @@
     .trail-recommendation-container {
       @include flex;
       @include flex-wrap;
+      .section-content-container {
+        //padding: $em 0;
+      }
       .trail-detail-container {
         width: $full;
         @include medium {
