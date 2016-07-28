@@ -1,0 +1,71 @@
+<div class="outer-wrapper">
+  <section class="form-section">
+    <form class="form">
+      <div class="section-content-container">
+        <div class="section-container-headline">
+          <h2 class="secondary-headline">Find a Trail</h2>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="label">Location</label>
+        <input type="text" class="text-input" placeholder="city or zip">
+      </div>
+
+      <div class="form-group">
+        <label class="label">Distance</label>
+        <!-- ng-select -->
+        <select class="select">
+          <option class="option" value="10">Less than 10 miles</option>
+          <option class="option" value="25">Less than 25 miles</option>
+          <option class="option" value="50">Less than 50 miles</option>
+          <option class="option" value="4000">Any</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="label">Rating</label>
+        <fieldset class="rating-stars">
+          <input type="radio" id="star-5" class="star" name="rating" value="5"><label class="full" for="star-5"></label>
+          <input type="radio" id="star-45" class="star" name="rating" value="4.5"><label class="half" for="star-45"></label>
+          <input type="radio" id="star-4" class="star" name="rating" value="4"><label class="full" for="star-4"></label>
+          <input type="radio" id="star-35" class="star" name="rating" value="3.5"><label class="half" for="star-35"></label>
+          <input type="radio" id="star-3" class="star" name="rating" value="3"><label class="full" for="star-3"></label>
+          <input type="radio" id="star-25" class="star" name="rating" value="2.5"><label class="half" for="star-25"></label>
+          <input type="radio" id="star-2" class="star" name="rating" value="2"><label class="full" for="star-2"></label>
+          <input type="radio" id="star-15" class="star" name="rating" value="1.5"><label class="half" for="star-15"></label>
+          <input type="radio" id="star-1" class="star" name="rating" value="1"><label class="full" for="star-1"></label>
+          <input type="radio" id="star-05" class="star" name="rating" value="0.5"><label class="half" for="star-05"></label>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <label class="label">Skill Level</label>
+        <!-- ng-select -->
+        <select class="select">
+          <option class="option" value="beginner">Beginner</option>
+          <option class="option" value="intermediate">Intermediate</option>
+          <option class="option" value="advanced">Advanced</option>
+          <option class="option" value="pro">Pro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="label">Effort Level</label>
+        <!-- ng-select -->
+        <select class="select">
+          <option class="option" value="minimal-effort">Minimal Effort</option>
+          <option class="option" value="medium-effort">Moderate Effort</option>
+          <option class="option" value="intense-effort">Intense Effort</option>
+          <option class="option" value="strenuous-effort">Very Strenuous Effort</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button class="btn primary-action">Submit</button>
+      </div>
+
+    </form>
+  </section>
+</div>

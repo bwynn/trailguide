@@ -1,0 +1,10 @@
+.form-section {
+
+  .form {
+    padding: $em;
+    .section-content-container, .form-group {
+      max-width: $max-width;
+      margin: $em*1.5 auto;
+    }
+  }
+}
