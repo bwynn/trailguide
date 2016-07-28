@@ -12,7 +12,10 @@
     height: auto;
   }
   &.gallery-img {
-    height: $em*10;
-    width: $em*15;
+    height: $em*15;
+    min-width: $em*15;
+    @include medium {
+      height: $em*10;
+    }
   }
 }

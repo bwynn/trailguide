@@ -2207,6 +2207,9 @@ div, section {
   margin: 0;
   padding: 0; }
 
+strong {
+  font-weight: 700; }
+
 .main-body {
   margin: 0;
   padding: 0;
@@ -2227,10 +2230,10 @@ div, section {
       .main-body .outer-wrapper .content-section .inner-wrapper {
         max-width: 700px;
         width: 100%;
-        margin: 0 auto;
-        /*@include large {
-          max-width: $max-width*1.3;
-        }*/ }
+        margin: 0 auto; }
+        @media only screen and (min-width: 950px) {
+          .main-body .outer-wrapper .content-section .inner-wrapper {
+            max-width: 910px; } }
 
 .style-headline {
   -webkit-display: flex;
@@ -2368,8 +2371,11 @@ h1, h2, h3, p {
   .img.featured-img {
     height: auto; }
   .img.gallery-img {
-    height: 180px;
-    width: 270px; }
+    height: 270px;
+    min-width: 270px; }
+    @media only screen and (min-width: 700px) {
+      .img.gallery-img {
+        height: 180px; } }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
   outline: none; }
@@ -2566,10 +2572,32 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .bikes-section .inner-wrapper .bike-collection-container {
   -webkit-display: flex;
-  display: flex; }
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
+  .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
+    width: 100%; }
+    @media only screen and (min-width: 700px) {
+      .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
+        max-width: 50%; } }
+    @media only screen and (min-width: 950px) {
+      .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
+        max-width: 33.33333%; } }
 
-.experience-section .inner-wrapper .section-content-container .secondary-content {
-  padding: 54px 0 18px;
-  margin-bottom: 0; }
+.experience-section .inner-wrapper .section-content-container .section-container-headline {
+  margin: 36px 0; }
+.experience-section .inner-wrapper .section-content-container .primary-content.bold {
+  margin: 54px 0 18px; }
+
+.recommended-trails .inner-wrapper .trail-recommendation-container {
+  -webkit-display: flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
+  .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container {
+    width: 100%; }
+    @media only screen and (min-width: 700px) {
+      .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container {
+        max-width: 50%; } }
 
 /*# sourceMappingURL=main.css.map */

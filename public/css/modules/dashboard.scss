@@ -24,6 +24,16 @@
   .inner-wrapper {
     .bike-collection-container {
       @include flex;
+      @include flex-wrap;
+      .bike-details-container {
+        width: $full;
+        @include medium {
+          max-width: $full/2;
+        }
+        @include large {
+          max-width: $full/3;
+        }
+      }
     }
   }
 }
@@ -31,9 +41,28 @@
 .experience-section {
   .inner-wrapper {
     .section-content-container {
-      .secondary-content {
-        padding: $em*3 0 $em;
-        margin-bottom: 0;
+      .section-container-headline {
+        margin: $em*2 0;
+      }
+      .primary-content {
+        &.bold {
+          margin: $em*3 0 $em;
+        }
+      }
+    }
+  }
+}
+
+.recommended-trails {
+  .inner-wrapper {
+    .trail-recommendation-container {
+      @include flex;
+      @include flex-wrap;
+      .trail-detail-container {
+        width: $full;
+        @include medium {
+          max-width: $full/2;
+        }
       }
     }
   }
