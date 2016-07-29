@@ -1,5 +1,5 @@
-angular.module('GoogleMapsService', [])
-  .factory('googleMapsService', ['$http', function($http) {
+angular.module('GoogleMapService', [])
+  .factory('googleMapService', ['$http', function($http) {
 
     var googleMapsService = {},
           locations = [],
@@ -28,6 +28,7 @@ angular.module('GoogleMapsService', [])
     };
 
     var convertToMapPoints = function(response) {
+      console.log("we made it this far");
 
       // clear locations
       var locations = [];
@@ -44,11 +45,11 @@ angular.module('GoogleMapsService', [])
               '</p>';
 
         locations.push({
-          latlon = new google.maps.LatLng(trail.location[1], trail.location[0]),
+          /*latlon = new google.maps.LatLng(trail.location[1], trail.location[0]),
           message = new google.maps.InfoWindow({
              content: contentString,
              maxWidth: 320
-          }),
+          }),*/
           title: trail.title,
           city: trail.city,
           rating: trail.rating

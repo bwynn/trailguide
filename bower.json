@@ -9,6 +9,7 @@
     "angular-ui": "latest",
     "font-awesome": "latest",
     "angularjs-geolocation": "latest",
-    "modernizr": "latest"
+    "modernizr": "latest",
+    "angular-google-maps": "latest"
   }
 }

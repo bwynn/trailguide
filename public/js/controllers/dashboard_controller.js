@@ -1,5 +1,5 @@
 angular.module('DashboardCtrl', [])
-  .controller('dashboardController', ['$scope', '$rootScope', 'geolocation', 'googleMapsService', function($scope, $rootScope, geolocation, googleMapsService) {
+  .controller('dashboardController', ['$scope', '$rootScope', 'geolocation', 'googleMapService', function($scope, $rootScope, geolocation, googleMapService) {
 
     // set default state
     $scope.loggedIn = true;
