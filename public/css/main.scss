@@ -36,3 +36,8 @@ $fa-font-path: "/libs/font-awesome/fonts";
 @import "modules/login_signup";
 @import "modules/dashboard";
 @import "modules/query_form";
+
+#map {
+  height: 400px;
+  width: 400px;
+}

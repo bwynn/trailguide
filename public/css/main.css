@@ -2613,4 +2613,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     max-width: 700px;
     margin: 27px auto; }
 
+#map {
+  height: 400px;
+  width: 400px; }
+
 /*# sourceMappingURL=main.css.map */
