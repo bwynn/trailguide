@@ -8,6 +8,8 @@
 
   <!-- style sheets -->
   <link rel="stylesheet" href="css/main.css"/>
+  <!-- api key -->
+  <!-- AIzaSyC9w6cuB9WNG4IRQKo8R0NNmvUMuPjKBoo -->
 </head>
 <body ng-controller="mainController" ng-cloak>
   <header class="global-navigation" ng-include="'views/partials/header.html'"></header>
@@ -17,12 +19,14 @@
   <div ng-view class="main-body" ng-cloak></div>
 
 <!-- Library Scripts -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9w6cuB9WNG4IRQKo8R0NNmvUMuPjKBoo"></script>
 <script src="libs/angular/angular.min.js"></script>
 <script src="libs/angular-animate/angular-animate.min.js"></script>
 <script src="libs/filepicker-js/filepicker.js"></script>
 <script src="libs/angular-filepicker/dist/angular_filepicker.js"></script>
 <script src="libs/angular-route/angular-route.js"></script>
 <script src="libs/angular-ui/build/angular-ui.js"></script>
+<script src="libs/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
 
 <!-- Controllers -->
 <script src="js/controllers/main_controller.js"></script>
@@ -33,6 +37,7 @@
 <script src="js/controllers/contact_controller.js"></script>
 <script src="js/controllers/trail_query_controller.js"></script>
 <!-- Services -->
+<script src="js/services/g_maps_service.js"></script>
 
 <!-- Routes -->
 <script src="js/app_routes.js"></script>

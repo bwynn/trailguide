@@ -4,10 +4,8 @@ const mongoose = require('mongoose'),
 
 const TrailSchema = new Schema({
   title: String,
-  coords: {
-    lat: String,
-    lng: String,
-  },
+  coords: [Number], // long, lat
+  city: String,
   featuredImg: {type: Schema.Types.Mixed},
   keywords: [String],
   profile: {

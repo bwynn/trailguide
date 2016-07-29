@@ -7,6 +7,8 @@
     "angular-animate": "latest",
     "angular-filepicker": "latest",
     "angular-ui": "latest",
-    "font-awesome": "latest"
+    "font-awesome": "latest",
+    "angularjs-geolocation": "latest",
+    "modernizr": "latest"
   }
 }

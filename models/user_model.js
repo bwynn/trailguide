@@ -12,7 +12,8 @@ const UserSchema = new Schema({
   },
   location: {
     zipcode: Number,
-    city: String
+    city: String,
+    coords: [Number] // long, lat
   },
   bikes: [{
     brand: String,
@@ -32,6 +33,8 @@ const UserSchema = new Schema({
     preference: String
   }
 });
+
+UserSchema.index({location: '2dsphere'});
 
 // generate hash with bcrypt
 UserSchema.methods.generateHash = function(password) {
