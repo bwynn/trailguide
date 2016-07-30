@@ -10,7 +10,7 @@ angular.module('GoogleMapService', [])
           googleMapsService.clickLong = 0;
 
     // refresh map with new data
-    googleMapsService.refresh = function(latitude, longitude) {
+    googleMapsService.refresh = function(latitude, longitude, filteredResults) {
 
         // reset coords array
         locations = [];
@@ -19,18 +19,26 @@ angular.module('GoogleMapService', [])
         selectedLat = latitude;
         selectedLong = longitude;
 
-        $http.get('/get_all_trails').then(function(data) {
+        // convert the filtered results into map points
+        if (filteredResults) {
+          locations = convertToMapPoints(filteredResults);
 
-          //console.log(data);
+          initialize(latitude, longitude, true);
+        }
+        else {
+          $http.get('/get_all_trails').then(function(data) {
 
-          locations = convertToMapPoints(data.data);
+            //console.log(data);
 
-        }, function(rejected) {
-          console.log(rejected);
-        }).then(function() {
-          // initialize map
-          initialize(latitude, longitude);
-        });
+            locations = convertToMapPoints(data.data);
+
+          }, function(rejected) {
+            console.log(rejected);
+          }).then(function() {
+            // initialize map
+            initialize(latitude, longitude);
+          });
+        }
     };
 
     var convertToMapPoints = function(response) {
@@ -66,7 +74,7 @@ angular.module('GoogleMapService', [])
     };
 
     // initialize map
-    var initialize = function(latitude, longitude) {
+    var initialize = function(latitude, longitude, filter) {
 
         var myLatLng = {lat: selectedLat, lng: selectedLong};
 
@@ -81,13 +89,20 @@ angular.module('GoogleMapService', [])
           });
         }
 
+        if (filter) {
+          icon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+        }
+        else {
+          icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+        }
+
         // loop through each trail location in array
         locations.forEach(function(n, i) {
           var marker = new google.maps.Marker({
             position: n.latlon,
             map: map,
             title: "Big Map",
-            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            icon: icon
           });
 
           // for each marker created, add listener
@@ -106,8 +121,6 @@ angular.module('GoogleMapService', [])
           icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
         });
 
-        lastMarker = marker;
-
         // function for moving to a selected location
         map.panTo(new google.maps.LatLng(latitude, longitude));
 
@@ -124,7 +137,9 @@ angular.module('GoogleMapService', [])
           }
 
           lastMarker = marker;
-          map.panTo(marker.position);
+          googleMapsService.clickLat = marker.getPosition().lat();
+          googleMapsService.clickLong = marker.getPosition().long();
+          $rootScope.$broadcast("clicked");
         });
     };
 

@@ -28,7 +28,32 @@ exports.findByFitness = function(req, res) {
 // query by distance
 // /find_by_distance - POST
 exports.findByDistance = function(req, res) {
-  // TBD with Google Maps build
+  const lat = req.body.lat,
+        long = req.body.long,
+        distance = req.body.distance;
+
+  const query = Trail.find({});
+
+    if (distance) {
+      query.where('location').near(
+        {center:
+          {type: 'Point', coordinates: [long, lat]},
+
+          // convert meters to miles
+          maxDistance: distance * 1609.34,
+          spherical: true
+      });
+    }
+
+    query.exec(function(err, trail) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(trail);
+    }, function(rejected) {
+      res.json(rejected);
+    });
 };
 
 // query by skill level
