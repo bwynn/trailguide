@@ -18,12 +18,15 @@ angular.module('GoogleMapService', [])
 
         $http.get('/get_all_trails').then(function(data) {
 
+          console.log(data);
+
           locations = convertToMapPoints(data);
 
-          // initialize map
-          initialize(latitude, longitude);
         }, function(rejected) {
           console.log(rejected);
+        }).then(function() {
+          // initialize map
+          initialize(latitude, longitude);
         });
     };
 
@@ -37,6 +40,7 @@ angular.module('GoogleMapService', [])
       for (var i = 0; i < response.length; i++) {
         var trail = response[i];
 
+        console.log(trail);
         // popup window
         var contentString =
               '<p><b>Trail Name</b>: ' + trail.title +
@@ -45,11 +49,11 @@ angular.module('GoogleMapService', [])
               '</p>';
 
         locations.push({
-          /*latlon = new google.maps.LatLng(trail.location[1], trail.location[0]),
-          message = new google.maps.InfoWindow({
+          latlon: new google.maps.LatLng(trail.coords.lng, trail.coords.lat),
+          message: new google.maps.InfoWindow({
              content: contentString,
              maxWidth: 320
-          }),*/
+          }),
           title: trail.title,
           city: trail.city,
           rating: trail.rating
@@ -62,6 +66,8 @@ angular.module('GoogleMapService', [])
     var initialize = function(latitude, longitude) {
 
         var myLatLng = {lat: selectedLat, lng: selectedLong};
+
+        console.log(myLatLng);
 
         // if map hasn't been initialized yet
         if (!map) {

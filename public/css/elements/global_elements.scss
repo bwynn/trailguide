@@ -45,6 +45,12 @@ strong {
   }
 }
 
+.angular-google-map, #map {
+  display: block;
+  height: 400px;
+  width: 400px;
+}
+
 // style guide declarations - exclusive to formatting of style guide
 .style-headline {
   @include flex;

@@ -2235,6 +2235,11 @@ strong {
           .main-body .outer-wrapper .content-section .inner-wrapper {
             max-width: 910px; } }
 
+.angular-google-map, #map {
+  display: block;
+  height: 400px;
+  width: 400px; }
+
 .style-headline {
   -webkit-display: flex;
   display: flex;
