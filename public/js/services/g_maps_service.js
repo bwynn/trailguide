@@ -3,8 +3,11 @@ angular.module('GoogleMapService', [])
 
     var googleMapsService = {},
           locations = [],
-          selectedLat = 39.5,
-          selectedLong = -98.35;
+          selectedLat = 38,
+          selectedLong = -122;
+
+          googleMapsService.clickLat = 0,
+          googleMapsService.clickLong = 0;
 
     // refresh map with new data
     googleMapsService.refresh = function(latitude, longitude) {
@@ -18,9 +21,9 @@ angular.module('GoogleMapService', [])
 
         $http.get('/get_all_trails').then(function(data) {
 
-          console.log(data);
+          //console.log(data);
 
-          locations = convertToMapPoints(data);
+          locations = convertToMapPoints(data.data);
 
         }, function(rejected) {
           console.log(rejected);
@@ -40,7 +43,7 @@ angular.module('GoogleMapService', [])
       for (var i = 0; i < response.length; i++) {
         var trail = response[i];
 
-        console.log(trail);
+        //console.log(trail);
         // popup window
         var contentString =
               '<p><b>Trail Name</b>: ' + trail.title +
@@ -49,7 +52,7 @@ angular.module('GoogleMapService', [])
               '</p>';
 
         locations.push({
-          latlon: new google.maps.LatLng(trail.coords.lng, trail.coords.lat),
+          latlon: new google.maps.LatLng(trail.coords.lat, trail.coords.lng),
           message: new google.maps.InfoWindow({
              content: contentString,
              maxWidth: 320
@@ -67,13 +70,13 @@ angular.module('GoogleMapService', [])
 
         var myLatLng = {lat: selectedLat, lng: selectedLong};
 
-        console.log(myLatLng);
+        //console.log(myLatLng);
 
         // if map hasn't been initialized yet
         if (!map) {
           // create a new map and place it
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 3,
+            zoom: 8,
             center: myLatLng
           });
         }
@@ -104,6 +107,25 @@ angular.module('GoogleMapService', [])
         });
 
         lastMarker = marker;
+
+        // function for moving to a selected location
+        map.panTo(new google.maps.LatLng(latitude, longitude));
+
+        // clicking on map moves red marker
+        google.maps.event.addListener(map, "click", function(e) {
+          var marker = new google.maps.Marker({
+            position: e.latLng,
+            map: map,
+            icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+          });
+
+          if (lastMarker) {
+            lastMarker.setMap(null);
+          }
+
+          lastMarker = marker;
+          map.panTo(marker.position);
+        });
     };
 
     // refresh on window load
