@@ -2201,7 +2201,8 @@ body {
   font-weight: 400;
   color: #2f2f2f;
   background-color: #FDFFFD;
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden; }
 
 div, section {
   margin: 0;
@@ -2440,7 +2441,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         .global-navigation .navbar-wrapper .nav-headline .global-header-logo > a:hover {
           text-decoration: underline; }
       .global-navigation .navbar-wrapper .nav-headline .global-header-logo .logo-headline {
-        font-size: 32.4px; }
+        font-size: 17.28px; }
+        @media only screen and (min-width: 700px) {
+          .global-navigation .navbar-wrapper .nav-headline .global-header-logo .logo-headline {
+            font-size: 32.4px; } }
     .global-navigation .navbar-wrapper .nav-menu-button {
       height: 36px;
       width: 36px;
@@ -2582,19 +2586,32 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     text-align: center; }
 
 .bikes-section .inner-wrapper .bike-collection-container {
-  -webkit-display: flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap; }
+  flex: none; }
+  .bikes-section .inner-wrapper .bike-collection-container .section-content-container .section-container-headline {
+    padding-left: 0; }
+    @media only screen and (min-width: 700px) {
+      .bikes-section .inner-wrapper .bike-collection-container .section-content-container .section-container-headline {
+        padding: 18px; } }
   .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
     width: 100%;
     flex: 1 0; }
+    .bikes-section .inner-wrapper .bike-collection-container .bike-details-container .section-content-container {
+      padding: 0; }
+      @media only screen and (min-width: 700px) {
+        .bikes-section .inner-wrapper .bike-collection-container .bike-details-container .section-content-container {
+          padding: 18px; } }
     @media only screen and (min-width: 700px) {
       .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
         max-width: 50%; } }
     @media only screen and (min-width: 950px) {
       .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
         max-width: 33.33333%; } }
+  @media only screen and (min-width: 700px) {
+    .bikes-section .inner-wrapper .bike-collection-container {
+      -webkit-display: flex;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap; } }
 
 .experience-section .inner-wrapper .section-content-container .section-container-headline {
   margin: 36px 0; }
@@ -2604,21 +2621,39 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     margin: 54px 0 18px; }
 
 .recommended-trails .inner-wrapper .trail-recommendation-container {
-  -webkit-display: flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap; }
+  flex: none; }
+  .recommended-trails .inner-wrapper .trail-recommendation-container .section-content-container .section-container-headline {
+    padding-left: 0; }
+    @media only screen and (min-width: 700px) {
+      .recommended-trails .inner-wrapper .trail-recommendation-container .section-content-container .section-container-headline {
+        padding: 18px; } }
   .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container {
     width: 100%;
     flex: 1 0; }
+    .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container .section-content-container {
+      padding: 0; }
+      @media only screen and (min-width: 700px) {
+        .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container .section-content-container {
+          padding: 18px; } }
     @media only screen and (min-width: 700px) {
       .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container {
         max-width: 50%; } }
+  @media only screen and (min-width: 700px) {
+    .recommended-trails .inner-wrapper .trail-recommendation-container {
+      -webkit-display: flex;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap; } }
 
 .review-section {
   padding: 0; }
   .review-section .review-detail-container {
     padding: 0; }
+    .review-section .review-detail-container .section-content-container .section-container-headline {
+      padding-left: 0; }
+      @media only screen and (min-width: 700px) {
+        .review-section .review-detail-container .section-content-container .section-container-headline {
+          padding: 18px; } }
     .review-section .review-detail-container .section-content-container .secondary-content.rating {
       display: inline-block; }
       .review-section .review-detail-container .section-content-container .secondary-content.rating > strong {
@@ -2633,6 +2668,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         @media only screen and (min-width: 700px) {
           .review-section .review-detail-container .review-images .review-image {
             max-width: 33.33333%; } }
+        .review-section .review-detail-container .review-images .review-image .section-content-container {
+          padding: 0; }
+          @media only screen and (min-width: 700px) {
+            .review-section .review-detail-container .review-images .review-image .section-content-container {
+              padding: 18px; } }
         @media only screen and (min-width: 700px) {
           .review-section .review-detail-container .review-images .review-image .gallery-img {
             width: 100%;
@@ -2649,6 +2689,22 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   .form-section .form .section-content-container, .form-section .form .form-group {
     max-width: 700px;
     margin: 27px auto; }
+
+.recommended-trails.trail-list .inner-wrapper .trail-recommendation-container .trail-detail-container {
+  flex: 1 0 auto; }
+  .recommended-trails.trail-list .inner-wrapper .trail-recommendation-container .trail-detail-container .section-content-container {
+    padding: 0; }
+    .recommended-trails.trail-list .inner-wrapper .trail-recommendation-container .trail-detail-container .section-content-container .img.gallery-img {
+      min-height: 252px; }
+      @media only screen and (min-width: 700px) {
+        .recommended-trails.trail-list .inner-wrapper .trail-recommendation-container .trail-detail-container .section-content-container .img.gallery-img {
+          min-height: 360px; } }
+    @media only screen and (min-width: 700px) {
+      .recommended-trails.trail-list .inner-wrapper .trail-recommendation-container .trail-detail-container .section-content-container {
+        padding: 18px; } }
+  @media only screen and (min-width: 700px) {
+    .recommended-trails.trail-list .inner-wrapper .trail-recommendation-container .trail-detail-container {
+      max-width: 100%; } }
 
 #map {
   height: 400px;

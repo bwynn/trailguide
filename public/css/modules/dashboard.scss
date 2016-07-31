@@ -1,3 +1,8 @@
+@mixin wrapped {
+  @include flex;
+  @include flex-wrap;
+}
+
 .profile-section, .bikes-section, .review-section, .recommended-trails, .experience-section {
   .section-container-headline {
     padding-left: $em;
@@ -29,19 +34,33 @@
 .bikes-section {
   .inner-wrapper {
     .bike-collection-container {
-      @include flex;
-      @include flex-wrap;
+      flex: none;
       .section-content-container {
         //padding: $em 0;
+        .section-container-headline {
+          padding-left: 0;
+          @include medium {
+            padding: $em;
+          }
+        }
       }
       .bike-details-container {
         @include flex-child;
+        .section-content-container {
+          padding: 0;
+          @include medium {
+            padding: $em;
+          }
+        }
         @include medium {
           max-width: $full/2;
         }
         @include large {
           max-width: $full/3;
         }
+      }
+      @include medium {
+        @include wrapped;
       }
     }
   }
@@ -66,16 +85,30 @@
 .recommended-trails {
   .inner-wrapper {
     .trail-recommendation-container {
-      @include flex;
-      @include flex-wrap;
+      flex: none;
       .section-content-container {
         //padding: $em 0;
+        .section-container-headline {
+          padding-left: 0;
+          @include medium {
+            padding: $em;
+          }
+        }
       }
       .trail-detail-container {
         @include flex-child;
+        .section-content-container {
+          padding: 0;
+          @include medium {
+            padding: $em;
+          }
+        }
         @include medium {
           max-width: $full/2;
         }
+      }
+      @include medium {
+        @include wrapped;
       }
     }
   }
@@ -86,6 +119,12 @@
   .review-detail-container {
     padding: 0;
     .section-content-container {
+      .section-container-headline {
+        padding-left: 0;
+        @include medium {
+          padding: $em;
+        }
+      }
       .secondary-content {
         &.rating {
           display: inline-block;
@@ -104,6 +143,12 @@
         @include medium {
           max-width: $full/3;
         }
+        .section-content-container {
+          padding: 0;
+          @include medium {
+            padding: $em;
+          }
+        }
         .gallery-img {
           //min-width: $em*5;
           @include medium {
@@ -113,8 +158,7 @@
         }
       }
       @include medium {
-        @include flex;
-        @include flex-wrap;
+        @include wrapped;
       }
     }
   }

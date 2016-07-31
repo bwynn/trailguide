@@ -1,0 +1,28 @@
+.recommended-trails {
+    &.trail-list {
+      .inner-wrapper {
+        .trail-recommendation-container {
+          .trail-detail-container {
+            flex: 1 0 auto;
+            .section-content-container {
+              padding: 0;
+              .img {
+                &.gallery-img {
+                  min-height: $em*14;
+                  @include medium {
+                    min-height: $em*20;
+                  }
+                }
+              }
+              @include medium {
+                padding: $em;
+              }
+            }
+            @include medium {
+              max-width: $full;
+            }
+          }
+        }
+      }
+    }
+}
