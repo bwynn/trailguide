@@ -1,5 +1,5 @@
 angular.module('MainCtrl', [])
-  .controller('mainController', ['$scope', '$rootScope', function($scope, $rootScope) {
+  .controller('mainController', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
 
     // showMenu
     $scope.showMenu = false;

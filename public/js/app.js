@@ -1,4 +1,4 @@
-angular.module('trailguideApp', ['ngRoute', 'ngAnimate', 'ui', 'angular-filepicker', 'geolocation', 'GoogleMapService', 'AppRoutes', 'MainCtrl', 'DashboardCtrl', 'LoginCtrl', 'SignupCtrl', 'AboutCtrl', 'ContactCtrl', 'TrailQueryCtrl'])
+angular.module('trailguideApp', ['ngRoute', 'ngAnimate', 'ui', 'angular-filepicker', 'geolocation', 'GoogleMapService', 'AppRoutes', 'MainCtrl', 'DashboardCtrl', 'LoginCtrl', 'SignupCtrl', 'AboutCtrl', 'ContactCtrl', 'TrailQueryCtrl', 'TrailListCtrl', 'TrailDetailsCtrl'])
   .config(function(filepickerProvider) {
     filepickerProvider.setKey('AK4B8xmmRRnOsYG8g3J4Lz');
   });

@@ -4,3 +4,4 @@
 /public/templates
 .DS_Store
 .git
+/public/js/controllers/.controller.js

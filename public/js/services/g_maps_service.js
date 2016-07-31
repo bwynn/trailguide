@@ -76,7 +76,7 @@ angular.module('GoogleMapService', [])
     // initialize map
     var initialize = function(latitude, longitude, filter) {
 
-        var myLatLng = {lat: selectedLat, lng: selectedLong};
+        var myLatLng = {lat: parseFloat(selectedLat), lng: parseFloat(selectedLong)};
 
         //console.log(myLatLng);
 
