@@ -80,3 +80,35 @@
     }
   }
 }
+
+.review-section {
+  padding: 0;
+  .review-detail-container {
+    padding: 0;
+    .section-content-container {
+      .secondary-content {
+        &.rating {
+          display: inline-block;
+          > strong {
+            float: left;
+            margin-top: $em;
+          }
+        }
+      }
+    }
+    .review-images {
+      @include flex;
+      @include flex-wrap;
+      padding: 0;
+      .review-image {
+        width: $full;
+        @include medium {
+          max-width: $full/3;
+        }
+        .gallery-img {
+          min-width: $em*5;
+        }
+      }
+    }
+  }
+}

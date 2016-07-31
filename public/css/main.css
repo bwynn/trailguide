@@ -2612,6 +2612,29 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
       .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container {
         max-width: 50%; } }
 
+.review-section {
+  padding: 0; }
+  .review-section .review-detail-container {
+    padding: 0; }
+    .review-section .review-detail-container .section-content-container .secondary-content.rating {
+      display: inline-block; }
+      .review-section .review-detail-container .section-content-container .secondary-content.rating > strong {
+        float: left;
+        margin-top: 18px; }
+    .review-section .review-detail-container .review-images {
+      -webkit-display: flex;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+      padding: 0; }
+      .review-section .review-detail-container .review-images .review-image {
+        width: 100%; }
+        @media only screen and (min-width: 700px) {
+          .review-section .review-detail-container .review-images .review-image {
+            max-width: 33.33333%; } }
+        .review-section .review-detail-container .review-images .review-image .gallery-img {
+          min-width: 90px; }
+
 .form-section .form {
   padding: 18px; }
   .form-section .form .section-content-container, .form-section .form .form-group {
