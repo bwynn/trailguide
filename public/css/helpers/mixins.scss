@@ -26,6 +26,11 @@
   align-content: center;
 }
 
+@mixin flex-child {
+  width: $full;
+  flex: 1 0; // safari fix for all flex children
+}
+
 // media query mixins
 @mixin medium {
   @media only screen and (min-width: #{$medium}) {

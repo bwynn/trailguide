@@ -11,6 +11,7 @@ h1, h2, h3, p {
   padding: $em;
   width: $full;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 // HEADLINES

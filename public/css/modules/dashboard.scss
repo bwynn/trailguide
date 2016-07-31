@@ -35,7 +35,7 @@
         //padding: $em 0;
       }
       .bike-details-container {
-        width: $full;
+        @include flex-child;
         @include medium {
           max-width: $full/2;
         }
@@ -72,7 +72,7 @@
         //padding: $em 0;
       }
       .trail-detail-container {
-        width: $full;
+        @include flex-child;
         @include medium {
           max-width: $full/2;
         }
@@ -97,17 +97,24 @@
       }
     }
     .review-images {
-      @include flex;
-      @include flex-wrap;
       padding: 0;
+      flex: none;
       .review-image {
-        width: $full;
+        @include flex-child;
         @include medium {
           max-width: $full/3;
         }
         .gallery-img {
-          min-width: $em*5;
+          //min-width: $em*5;
+          @include medium {
+            width: $full;
+            flex: 1 0 auto;
+          }
         }
+      }
+      @include medium {
+        @include flex;
+        @include flex-wrap;
       }
     }
   }
