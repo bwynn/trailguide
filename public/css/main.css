@@ -2619,6 +2619,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .profile-section .section-container-headline, .bikes-section .section-container-headline, .review-section .section-container-headline, .recommended-trails .section-container-headline, .experience-section .section-container-headline {
   padding-left: 18px; }
 
+.bike-collection-container .section-content-container .section-container-headline, .trail-recommendation-container .section-content-container .section-container-headline {
+  padding-left: 0; }
+  @media only screen and (min-width: 700px) {
+    .bike-collection-container .section-content-container .section-container-headline, .trail-recommendation-container .section-content-container .section-container-headline {
+      padding: 18px; } }
+
 .profile-section {
   -webkit-display: flex;
   display: flex;
@@ -2635,11 +2641,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .bikes-section .inner-wrapper .bike-collection-container {
   flex: none; }
-  .bikes-section .inner-wrapper .bike-collection-container .section-content-container .section-container-headline {
-    padding-left: 0; }
-    @media only screen and (min-width: 700px) {
-      .bikes-section .inner-wrapper .bike-collection-container .section-content-container .section-container-headline {
-        padding: 18px; } }
   .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
     width: 100%;
     flex: 1 0; }
@@ -2670,11 +2671,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .recommended-trails .inner-wrapper .trail-recommendation-container {
   flex: none; }
-  .recommended-trails .inner-wrapper .trail-recommendation-container .section-content-container .section-container-headline {
-    padding-left: 0; }
-    @media only screen and (min-width: 700px) {
-      .recommended-trails .inner-wrapper .trail-recommendation-container .section-content-container .section-container-headline {
-        padding: 18px; } }
   .recommended-trails .inner-wrapper .trail-recommendation-container .trail-detail-container {
     width: 100%;
     flex: 1 0; }

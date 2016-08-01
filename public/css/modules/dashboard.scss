@@ -4,6 +4,18 @@
   }
 }
 
+.bike-collection-container, .trail-recommendation-container {
+  .section-content-container  {
+    //padding: $em 0;
+    .section-container-headline {
+      padding-left: 0;
+      @include medium {
+        padding: $em;
+      }
+    }
+  }
+}
+
 .profile-section {
   @include flex;
   @include align-items;
@@ -30,15 +42,6 @@
   .inner-wrapper {
     .bike-collection-container {
       flex: none;
-      .section-content-container {
-        //padding: $em 0;
-        .section-container-headline {
-          padding-left: 0;
-          @include medium {
-            padding: $em;
-          }
-        }
-      }
       .bike-details-container {
         @include flex-child;
         .section-content-container {
@@ -81,15 +84,6 @@
   .inner-wrapper {
     .trail-recommendation-container {
       flex: none;
-      .section-content-container {
-        //padding: $em 0;
-        .section-container-headline {
-          padding-left: 0;
-          @include medium {
-            padding: $em;
-          }
-        }
-      }
       .trail-detail-container {
         @include flex-child;
         .section-content-container {
