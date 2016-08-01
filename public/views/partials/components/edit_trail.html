@@ -1,0 +1,67 @@
+<section class="content-section alert-section">
+  <div class="alerts">
+    <div class="alert-modal">
+      <div class="alert-box">
+        <div class="section-content-container">
+          <div class="close-modal">
+            <span>X</span>
+          </div>
+          <form class="form">
+            <div class="section-container-headline">
+              <h2 class="secondary-headline">Add Trail</h2>
+            </div>
+            <div class="form-group">
+              <label class="label">Latitude Coordinate</label>
+              <input type="number" class="text-input"/>
+            </div>
+            <div class="form-group">
+              <label class="label">Longitude Coordinate</label>
+              <input type="number" class="text-input"/>
+            </div>
+            <div class="form-group">
+              <label class="label">Nearest City</label>
+              <input type="text" class="text-input"/>
+            </div>
+            <div class="form-group">
+              <label class="label">Trail Tags</label>
+              <input type="text" class="text-input" placeholder="downhill, jumps, technical, <- comma separated"/>
+            </div>
+            <div class="form-group">
+              <label class="label">Trail Write Up</label>
+              <textarea class="text-area"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="label">One word to sum up ride intensity</label>
+              <input type="text" class="text-input" placeholder="strenuous"/>
+            </div>
+            <div class="form-group">
+              <label class="label">Required Skill Level</label>
+              <select class="select">
+                <option class="option" value="green">Green - Easy, good for beginners</option>
+                <option class="option" value="blue">Blue - Intermediate, moderate skill required</option>
+                <option class="option" value="black-diamond">Black Diamond - Advanced, Technical and consequential</option>
+                <option class="option" value="double-black-diamond">Double Black Diamond - Experts and lunatics only</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label">Directions</label>
+              <textarea class="text-area" placeholder="How do you get there? Use most common routes and provide at least two direction options if multiple routes are available."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="label">Upload featured image of the trail</label>
+              <div class="section-content-container"><!-- ng-repeat for multiple uploaded images-->
+                <img class="img gallery-img" src="#"/>
+              </div>
+              <div class="section-content-container">
+                <button class="btn btn-secondary">Upload Pictures</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn primary-action">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
