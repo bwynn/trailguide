@@ -11,7 +11,7 @@ exports.getAllTrails = function(req, res) {
 };
 
 // get trail
-// /get_trail - GET
+// /get_trail - POST
 exports.getTrail = function(req, res) {
     Trail.findOne({_id: req.body.id}, function(err, trail) {
       if (err) {
