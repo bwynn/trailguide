@@ -30,6 +30,7 @@ $fa-font-path: "/libs/font-awesome/fonts";
 @import "elements/forms";
 @import "components/header";
 @import "components/footer";
+@import "components/maps";
 @import "components/stars";
 @import "components/reviews";
 @import "modules/alerts";
@@ -38,8 +39,3 @@ $fa-font-path: "/libs/font-awesome/fonts";
 @import "modules/dashboard";
 @import "modules/query_form";
 @import "modules/trail_list";
-
-#map {
-  height: 400px;
-  width: 400px;
-}

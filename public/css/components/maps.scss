@@ -1,0 +1,9 @@
+#map, #access-map {
+  height: 250px;
+  width: $full;
+  margin: $center;
+  background-color: $grey;
+  @include medium {
+    height: 400px;
+  }
+}

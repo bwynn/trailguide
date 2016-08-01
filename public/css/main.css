@@ -2509,6 +2509,15 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     .nav-menu-items {
       width: 33.33333%; } }
 
+#map, #access-map {
+  height: 250px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #CBCFCC; }
+  @media only screen and (min-width: 700px) {
+    #map, #access-map {
+      height: 400px; } }
+
 .rating-stars {
   float: left;
   border: none; }
@@ -2705,9 +2714,5 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   @media only screen and (min-width: 700px) {
     .recommended-trails.trail-list .inner-wrapper .trail-recommendation-container .trail-detail-container {
       max-width: 100%; } }
-
-#map {
-  height: 400px;
-  width: 400px; }
 
 /*# sourceMappingURL=main.css.map */
