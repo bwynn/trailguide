@@ -1,0 +1,49 @@
+.review-section {
+  padding: 0;
+  .review-detail-container {
+    padding: 0;
+    .section-content-container {
+      .section-container-headline {
+        padding-left: 0;
+        @include medium {
+          padding: $em;
+        }
+      }
+      .secondary-content {
+        &.rating {
+          display: inline-block;
+          > strong {
+            float: left;
+            margin-top: $em;
+          }
+        }
+      }
+    }
+    .review-images {
+      padding: 0;
+      flex: none;
+      .review-image {
+        @include flex-child;
+        @include medium {
+          max-width: $full/3;
+        }
+        .section-content-container {
+          padding: 0;
+          @include medium {
+            padding: $em;
+          }
+        }
+        .gallery-img {
+          //min-width: $em*5;
+          @include medium {
+            width: $full;
+            flex: 1 0 auto;
+          }
+        }
+      }
+      @include medium {
+        @include wrapped;
+      }
+    }
+  }
+}
