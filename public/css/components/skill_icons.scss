@@ -1,7 +1,7 @@
 // create css based ski trail style badges
-.rating-container {
+.skill-container {
   @include flex;
-  .rating-icon {
+  .skill-icon {
     height: 50px;
     width: 50px;
     margin: $em*.6;

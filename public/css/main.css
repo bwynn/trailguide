@@ -2547,27 +2547,27 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .rating-stars > input:checked ~ label {
   color: #FFED85; }
 
-.rating-container {
+.skill-container {
   -webkit-display: flex;
   display: flex; }
-  .rating-container .rating-icon {
+  .skill-container .skill-icon {
     height: 50px;
     width: 50px;
     margin: 10.8px; }
-    .rating-container .rating-icon.green-circle {
+    .skill-container .skill-icon.green-circle {
       border-radius: 50%;
       background-color: #16c72e; }
-    .rating-container .rating-icon.blue-square {
+    .skill-container .skill-icon.blue-square {
       background-color: #1663c7;
       border-radius: 2.25px; }
-    .rating-container .rating-icon.black-diamond {
+    .skill-container .skill-icon.black-diamond {
       width: 0;
       height: 0;
       border: 25px solid transparent;
       border-bottom-color: #2f2f2f;
       position: relative;
       top: -25px; }
-      .rating-container .rating-icon.black-diamond:after {
+      .skill-container .skill-icon.black-diamond:after {
         content: '';
         position: absolute;
         left: -25px;
@@ -2576,10 +2576,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         width: 0;
         border: 25px solid transparent;
         border-top-color: #2f2f2f; }
-    .rating-container .rating-icon.double-black-diamond {
+    .skill-container .skill-icon.double-black-diamond {
       -webkit-display: flex;
       display: flex; }
-      .rating-container .rating-icon.double-black-diamond .black-diamond {
+      .skill-container .skill-icon.double-black-diamond .black-diamond {
         margin: 0; }
 
 .review-section {
