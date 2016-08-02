@@ -1,0 +1,29 @@
+  <div class="modal-window">
+      <div class="close-modal" ng-click="toggleAddBikeForm()">
+        <span>X</span>
+      </div>
+      <form class="form">
+        <div class="section-container-headline">
+          <h2 class="secondary-headline">Add Bike</h2>
+        </div>
+        <div class="form-group">
+          <label class="label">Model Year</label>
+          <input type="text" class="text-input" placeholder="eg.2016" ng-model="bike.year">
+        </div>
+        <div class="form-group">
+          <label class="label">Brand</label>
+          <input type="text" class="text-input" placeholder="eg.Specialized" ng-model="bike.brand">
+        </div>
+        <div class="form-group">
+          <label class="label">Model</label>
+          <input type="text" class="text-input" placeholder="eg.Stumpjumper FSR Expert 29" ng-model="bike.model">
+        </div>
+        <div class="form-group">
+          <button class="btn secondary-action" ng-click="addBikeImage()" ng-hide="bikeImage">Upload Bike Image</button>
+          <img ng-src="{{bike.bikeImage.url}}" class="img featuredImg" ng-model="bike.bikeImage"/>
+        </div>
+        <div class="form-group">
+          <button class="btn primary-action" ng-click="addBike()">Submit</button>
+        </div>
+      </form>
+  </div>

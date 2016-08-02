@@ -7,12 +7,9 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 // form
 .form {
   padding: $vertical-align;
-  background-color: $black;
   height: 100vh;
   overflow: hidden;
-  //border: $em/8 solid $black;
-  color: $white;
-  //border-radius: $em/8;
+  color: $black;
   // default formatting
   .form-group {
     margin: $em;

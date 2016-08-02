@@ -74,7 +74,7 @@ exports.addReview = function(req, res) {
 // update review
 // /update_review - PUT
 exports.updateReview = function(req, res) {
-  Review.find({authorID: req.session.passport.user}, function(err, reviews) {
+  Review.find({authorID: req.body.userID}, function(err, reviews) {
     Review.update({_id: req.body.reviewID}, {
       rating: req.body.rating,
       comment: req.body.comment,
@@ -92,7 +92,7 @@ exports.updateReview = function(req, res) {
 // update review
 // /add_review_pictures - PUT
 exports.addReviewPictures = function(req, res) {
-  Review.find({authorID: req.session.passport.user}, function(err, reviews) {
+  Review.find({authorID: req.body.userID}, function(err, reviews) {
     Review.update({_id: req.body.reviewID}, {
       $push: {pictures: req.body.pictures}
     }, function(err, review) {

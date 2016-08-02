@@ -3,12 +3,15 @@
     <div class="section-container-headline">
       <h2 class="secondary-headline">Bikes</h2>
     </div>
+    <div class="section-content-container">
+      <button class="btn secondary-action" ng-click="toggleAddBikeForm()">Add New Bike</button>
+    </div>
   </div>
   <div class="bike-collection-container">
     <!-- repeat -->
     <div class="section-content-container bike-details-container" ng-repeat="bike in user.bikes">
       <div class="section-content-container">
-        <img class="img gallery-img">
+        <img class="img gallery-img" ng-src="{{bike.picture.url}}">
       </div>
       <div class="section-container-headline">
         <h2 class="secondary-headline">{{bike.year}} | {{bike.brand}} | {{bike.model}}</h2>

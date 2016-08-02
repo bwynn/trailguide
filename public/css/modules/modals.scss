@@ -1,1 +1,27 @@
 // modals
+.modal-container {
+  z-index: 2;
+  height: $full;
+  min-height: $full;
+  width: $full;
+  top: 0;
+  left: 0;
+  background-color: $black;
+  overflow: scroll;
+  .modal-window {
+    position: fixed;
+    top: 0;
+    left: $full*.05;
+    margin: 0 auto;
+    background-color: $white;
+    z-index: 4;
+    width: $full*.9;
+    .form {
+      overflow: scroll;
+    }
+    @include medium {
+      width: $full*.6;
+      left: $full*.2;
+    }
+  }
+}

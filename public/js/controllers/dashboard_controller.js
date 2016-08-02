@@ -6,10 +6,27 @@ angular.module('DashboardCtrl', [])
     // emit logged in value to rootscope
     $scope.$emit('loggedInEmit', {loggedIn: true});
 
+    // ADD BIKE FORM CONTROLS & STATES -----------------------------------------
+
+    // default show bike form state
+    $scope.showAddBikeForm = false;
+
+    $scope.toggleAddBikeForm = function() {
+      if ($scope.showAddBikeForm) {
+        $scope.showAddBikeForm = false;
+      }
+      else {
+        $scope.showAddBikeForm = true;
+      }
+    };
+
+    // INIT FUNCTIONS ----------------------------------------------------------
     // get profile - send to $rootScope
     profileService.getProfile().then(function(data) {
       // set user
       $scope.user = data.data;
+
+      console.log($scope.user);
 
       $scope.$emit('profileEmit', {profile: $scope.user});
     }).then(function() {

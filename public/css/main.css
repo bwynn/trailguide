@@ -2211,13 +2211,15 @@ div, section {
 strong {
   font-weight: 700; }
 
+.main-body, .modal-container {
+  position: absolute;
+  top: 45px; }
+
 .main-body {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  position: absolute;
-  top: 45px;
   z-index: 1; }
   .main-body .outer-wrapper {
     width: inherit;
@@ -2369,7 +2371,8 @@ h1, h2, h3, p {
 
 .img {
   width: 100%;
-  background-color: #CBCFCC;
+  max-width: 100%;
+  background-color: #FDFFFD;
   display: block; }
   .img.portrait {
     width: 180px;
@@ -2378,21 +2381,17 @@ h1, h2, h3, p {
   .img.featured-img {
     height: auto; }
   .img.gallery-img {
-    height: 270px;
+    height: auto;
     min-width: 270px; }
-    @media only screen and (min-width: 700px) {
-      .img.gallery-img {
-        height: 180px; } }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
   outline: none; }
 
 .form {
   padding: 18px 0;
-  background-color: #2f2f2f;
   height: 100vh;
   overflow: hidden;
-  color: #FDFFFD; }
+  color: #2f2f2f; }
   .form .form-group {
     margin: 18px;
     margin-bottom: 36px; }
@@ -2642,6 +2641,30 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     max-width: 540px;
     background-color: #FDFFFD; }
 
+.modal-container {
+  z-index: 2;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #2f2f2f;
+  overflow: scroll; }
+  .modal-container .modal-window {
+    position: fixed;
+    top: 0;
+    left: 5%;
+    margin: 0 auto;
+    background-color: #FDFFFD;
+    z-index: 4;
+    width: 90%; }
+    .modal-container .modal-window .form {
+      overflow: scroll; }
+    @media only screen and (min-width: 700px) {
+      .modal-container .modal-window {
+        width: 60%;
+        left: 20%; } }
+
 @media only screen and (min-width: 950px) {
   .main-body .outer-wrapper .login-form .inner-wrapper, .main-body .outer-wrapper .signup-form .inner-wrapper {
     max-width: 720px; } }
@@ -2681,9 +2704,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     flex: 1 0; }
     .bikes-section .inner-wrapper .bike-collection-container .bike-details-container .section-content-container {
       padding: 0; }
-      @media only screen and (min-width: 700px) {
-        .bikes-section .inner-wrapper .bike-collection-container .bike-details-container .section-content-container {
-          padding: 18px; } }
     @media only screen and (min-width: 700px) {
       .bikes-section .inner-wrapper .bike-collection-container .bike-details-container {
         max-width: 50%; } }

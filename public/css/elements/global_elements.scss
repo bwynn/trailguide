@@ -17,13 +17,17 @@ strong {
   font-weight: 700;
 }
 
+// main body and modal positioning
+.main-body, .modal-container {
+  position: absolute;
+  top: $em*2.5;
+}
+
 // global class declarations
 .main-body {
   @include strip;
   width: $full;
   min-height: $full-height;
-  position: absolute;
-  top: $em*2.5;
   z-index: 1;
   .outer-wrapper {
     width: $inherit;

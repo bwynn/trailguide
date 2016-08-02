@@ -1,7 +1,8 @@
 // images
 .img {
   width: $full;
-  background-color: $grey;
+  max-width: $full;
+  background-color: $white;
   display: block;
   &.portrait {
     width: $em*10;
@@ -12,10 +13,7 @@
     height: auto;
   }
   &.gallery-img {
-    height: $em*15;
+    height: auto;
     min-width: $em*15;
-    @include medium {
-      height: $em*10;
-    }
   }
 }

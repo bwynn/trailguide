@@ -1,8 +1,24 @@
 angular.module('MainCtrl', [])
-  .controller('mainController', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
+  .controller('mainController', ['$scope', '$rootScope', '$location', 'profileService', function($scope, $rootScope, $location, profileService) {
 
+    // default global states
+    // =========================================================================
     // showMenu
     $scope.showMenu = false;
+
+    // toggle menu
+    $scope.toggleMenu = function() {
+      if ($scope.showMenu) {
+        $scope.showMenu = false;
+      } else if (!$scope.showMenu) {
+        $scope.showMenu = true;
+      } else {
+        console.log("Toggle Menu failed.");
+      }
+    };
+
+    // NAVIGATION STATE EMITTERS
+    // =========================================================================
 
     // various state emits - changes nav options
     $rootScope.$on('loggedInEmit', function(e, args) {
@@ -27,15 +43,14 @@ angular.module('MainCtrl', [])
       //console.log($rootScope.user);
     });
 
-    // toggle menu
-    $scope.toggleMenu = function() {
-      if ($scope.showMenu) {
-        $scope.showMenu = false;
-      } else if (!$scope.showMenu) {
-        $scope.showMenu = true;
-      } else {
-        console.log("Toggle Menu failed.");
-      }
-    };
+    // DIGEST CYCLE EMIT WATCHERS
+    // =========================================================================
+
+    // Add bike watcher
+    $rootScope.$on('newBikeAddedEmit', function(e, args) {
+      $rootScope.bike = args.bike;
+      $rootScope.bike.picture = args.bike.bikeImage;
+      $rootScope.user.bikes.push($rootScope.bike);
+    });
 
   }]);

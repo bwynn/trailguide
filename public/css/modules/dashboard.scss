@@ -46,9 +46,6 @@
         @include flex-child;
         .section-content-container {
           padding: 0;
-          @include medium {
-            padding: $em;
-          }
         }
         @include medium {
           max-width: $full/2;
