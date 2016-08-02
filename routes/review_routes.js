@@ -22,6 +22,9 @@ module.exports = function(app, passport) {
 
   // delete review
   app.put('/delete_review', loggedIn, reviewCtrl.deleteReview);
+
+  // add review pictures
+  app.put('/add_review_pictures', loggedIn, reviewCtrl.addReviewPictures);
 };
 
 function loggedIn(req, res, next) {

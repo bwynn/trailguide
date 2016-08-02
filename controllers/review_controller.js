@@ -89,6 +89,22 @@ exports.updateReview = function(req, res) {
   });
 };
 
+// update review
+// /add_review_pictures - PUT
+exports.addReviewPictures = function(req, res) {
+  Review.find({authorID: req.session.passport.user}, function(err, reviews) {
+    Review.update({_id: req.body.reviewID}, {
+      pictures: req.body.pictures
+    }, function(err, review) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(review);
+    });
+  });
+};
+
 // delete review
 // /delete_review - PUT
 exports.deleteReview = function(req, res) {

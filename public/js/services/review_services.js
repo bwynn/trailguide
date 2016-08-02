@@ -21,6 +21,9 @@ angular.module('ReviewService', [])
       },
       deleteReview: function(data) {
         return $http.put('/delete_review', data);
+      },
+      addReviewPictures: function(data) {
+        return $http.put('/add_review_pictures', data);
       }
     };
   }]);
