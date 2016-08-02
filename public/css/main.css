@@ -2547,6 +2547,41 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .rating-stars > input:checked ~ label {
   color: #FFED85; }
 
+.rating-container {
+  -webkit-display: flex;
+  display: flex; }
+  .rating-container .rating-icon {
+    height: 50px;
+    width: 50px;
+    margin: 10.8px; }
+    .rating-container .rating-icon.green-circle {
+      border-radius: 50%;
+      background-color: #16c72e; }
+    .rating-container .rating-icon.blue-square {
+      background-color: #1663c7;
+      border-radius: 2.25px; }
+    .rating-container .rating-icon.black-diamond {
+      width: 0;
+      height: 0;
+      border: 25px solid transparent;
+      border-bottom-color: #2f2f2f;
+      position: relative;
+      top: -25px; }
+      .rating-container .rating-icon.black-diamond:after {
+        content: '';
+        position: absolute;
+        left: -25px;
+        top: 25px;
+        height: 0;
+        width: 0;
+        border: 25px solid transparent;
+        border-top-color: #2f2f2f; }
+    .rating-container .rating-icon.double-black-diamond {
+      -webkit-display: flex;
+      display: flex; }
+      .rating-container .rating-icon.double-black-diamond .black-diamond {
+        margin: 0; }
+
 .review-section {
   padding: 0; }
   .review-section .review-detail-container {

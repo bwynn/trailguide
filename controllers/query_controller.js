@@ -16,7 +16,7 @@ exports.findByKeyword = function(req, res) {
 // query by fitness level
 // /find_by_fitness - POST
 exports.findByFitness = function(req, res) {
-  Trail.find({"profile.fitnessLevel": req.body.fitnessLevel}, function(err, trail) {
+  Trail.find({"profile.fitnessLevel": {'$lte' : req.body.fitnessLevel}}, function(err, trail) {
     if (err) {
       res.send(err);
     }
@@ -59,7 +59,7 @@ exports.findByDistance = function(req, res) {
 // query by skill level
 // /find_by_skill - POST
 exports.findBySkill = function(req, res) {
-  Trail.find({"profile.skillLevel": req.body.skillLevel}, function(err, trail) {
+  Trail.find({"profile.skillLevel": {'$lte': req.body.skillLevel}}, function(err, trail) {
     if (err) {
       res.send(err);
     }

@@ -1,0 +1,41 @@
+// create css based ski trail style badges
+.rating-container {
+  @include flex;
+  .rating-icon {
+    height: 50px;
+    width: 50px;
+    margin: $em*.6;
+    &.green-circle {
+      border-radius: $full/2;
+      background-color: #16c72e;
+    }
+    &.blue-square {
+      background-color: #1663c7;
+      border-radius: $em/8;
+    }
+    &.black-diamond {
+      width: 0;
+      height: 0;
+      border: 25px solid transparent;
+      border-bottom-color: $black;
+      position: relative;
+      top: -25px;
+      &:after {
+        content: '';
+        position: absolute;
+        left: -25px;
+        top: 25px;
+        height: 0;
+        width: 0;
+        border: 25px solid transparent;
+        border-top-color: $black;
+      }
+    }
+    &.double-black-diamond {
+      @include flex;
+      .black-diamond {
+        margin: 0;
+      }
+    }
+  }
+}
