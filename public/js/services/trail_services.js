@@ -5,7 +5,7 @@ angular.module('TrailService', [])
         return $http.get('/get_all_trails');
       },
       getTrail: function(data) {
-        return $http.post('/get_trail');
+        return $http.post('/get_trail', data);
       },
       addTrail: function(data) {
         return $http.post('/add_trail', data);

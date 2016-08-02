@@ -13,8 +13,8 @@ const TrailSchema = new Schema({
   keywords: [String],
   profile: {
     description: String,
-    fitnessLevel: String,
-    skillLevel: String,
+    fitnessLevel: Number,
+    skillLevel: Number,
     access: String,
   },
   rating: [Number]

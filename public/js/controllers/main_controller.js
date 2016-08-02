@@ -4,19 +4,27 @@ angular.module('MainCtrl', [])
     // showMenu
     $scope.showMenu = false;
 
-    // various state emits
+    // various state emits - changes nav options
     $rootScope.$on('loggedInEmit', function(e, args) {
       $rootScope.loggedIn = args.loggedIn;
     });
 
+    // sign up emit - changes nav options
     $rootScope.$on('signupViewEmit', function(e, args) {
       $rootScope.signupView = args.signupView;
       $rootScope.loginView = false;
     });
 
+    // login emit - changes nav options
     $rootScope.$on('loginViewEmit', function(e, args) {
       $rootScope.loginView = args.loginView;
       $rootScope.signupView = false;
+    });
+
+    // profile emit - get profile details
+    $rootScope.$on('profileEmit', function(e, args) {
+      $rootScope.user = args.profile;
+      //console.log($rootScope.user);
     });
 
     // toggle menu

@@ -57,6 +57,7 @@ exports.addReview = function(req, res) {
 
   review.authorID = req.session.passport.user;
   review.trailID = req.body.trailID;
+  review.trailTitle = req.body.trailTitle;
   review.rating = req.body.rating;
   review.comment = req.body.comment;
   review.pictures = req.body.pictures;

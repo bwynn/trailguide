@@ -6,50 +6,23 @@
   </div>
   <div class="review-container">
     <!-- repeat -->
-    <div class="section-content-container review-detail-container">
+    <div class="section-content-container review-detail-container" ng-repeat="review in reviews track by $index">
       <div class="section-content-container">
 
         <div class="section-headline-container">
-          <h2 class="secondary-headline">Review Title</h2>
-          <span class="secondary-content">(198 reviews)</span><!-- hide this element when in dashboard show in trail details template -->
+          <h2 class="secondary-headline">{{review.trailTitle}}</h2>
+          <span class="secondary-content" ng-show="totalTrails">(198 reviews)</span><!-- hide this element when in dashboard show in trail details template -->
         </div>
         <div class="section-content-container">
-          <p class="secondary-content"><strong>by: </strong> Author Name</p>
-          <p class="secondary-content"><strong>Date:</strong> Jun 16, 2017</p>
+          <p class="secondary-content"><strong>by: </strong> {{user.profile.username}}</p>
+          <p class="secondary-content"><strong>Date:</strong> {{review.date | date: 'fullDate'}}</p>
           <p class="secondary-content rating"><strong>Rating: </strong> <span class="section-content-container" ng-include="'views/partials/components/rating_template.html'"></span></p>
-          <p class="primary-content"><strong>Review:</strong> What a fun, fast and flowing trail. I rode it in the middle of the summer, so it was a bit dry and washed out, but that didn't take away from the fact that this trail winds through the trees on this moderately technical descent. There are plenty of side-trails if one knows where to look.</p>
+          <p class="primary-content"><strong>Review:</strong> {{review.comment}}</p>
         </div>
 
         <div class="section-content-container review-images">
           <!-- repeat -->
-          <div class="review-image">
-            <div class="section-content-container">
-              <img class="img gallery-img">
-            </div>
-            <div class="section-content-container">
-              <p class="primary-content">A fun, winding descent through the trees.</p>
-            </div>
-          </div>
-
-          <div class="review-image">
-            <div class="section-content-container">
-              <img class="img gallery-img">
-            </div>
-            <div class="section-content-container">
-              <p class="primary-content">A fun, winding descent through the trees.</p>
-            </div>
-          </div>
-
-          <div class="review-image">
-            <div class="section-content-container">
-              <img class="img gallery-img">
-            </div>
-            <div class="section-content-container">
-              <p class="primary-content">A fun, winding descent through the trees.</p>
-            </div>
-          </div>
-
-          <div class="review-image">
+          <div class="review-image" ng-repeat="picture in review.pictures" ng-show="picture">
             <div class="section-content-container">
               <img class="img gallery-img">
             </div>

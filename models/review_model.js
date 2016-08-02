@@ -4,6 +4,7 @@ const mongoose = require('mongoose'),
 const ReviewSchema = new Schema({
   authorID: String,
   trailID: String,
+  trailTitle: String,
   rating: Number,
   comment: String,
   pictures: [{type: Schema.Types.Mixed}],
