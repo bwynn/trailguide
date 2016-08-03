@@ -35,6 +35,8 @@ exports.addTrail = function(req, res) {
     trail.profile.skillLevel = req.body.skillLevel;
     trail.profile.access = req.body.access;
     trail.title = req.body.title;
+    trail.author = req.body.author;
+    trail.city = req.body.city;
 
     trail.save(function(err, trail) {
       if (err) {
@@ -48,7 +50,7 @@ exports.addTrail = function(req, res) {
 // edit trail
 // /update_trail - PUT
 exports.updateTrail = function(req, res) {
-    Trail.find({title: req.body.title}, function(err, trail) {
+    Trail.find({title: req.body.title}, function() {
       Trail.update({_id: req.body.id}, {
         "coords.lat": req.body.lat,
         "coords.lng": req.body.lng,
@@ -57,7 +59,9 @@ exports.updateTrail = function(req, res) {
         "profile.skillLevel": req.body.skillLevel,
         "profile.access": req.body.access,
         "title": req.body.title,
-        "featuredImg": req.body.featuredImg
+        "featuredImg": req.body.featuredImg,
+        "author": req.body.author,
+        "city": req.body.city
       }, function(err, trail) {
         if (err) {
           res.send(err);

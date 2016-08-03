@@ -46,16 +46,9 @@ angular.module('MainCtrl', [])
     // DIGEST CYCLE EMIT WATCHERS
     // =========================================================================
 
-    // Add bike watcher
-    /*$rootScope.$on('newBikeAddedEmit', function(e, args) {
-      $rootScope.bike = args.bike;
-      $rootScope.bike.picture = args.bike.bikeImage;
-      $rootScope.user.bikes.push($rootScope.bike);
+    // set current trail via lower scope emits
+    $rootScope.$on('setTrailEmit', function(e, args) {
+      $rootScope.currentTrail = args.trail;
     });
-
-    // update bike watcher
-    $rootScope.$on('updateBikeEmit', function(e, args) {
-      $rootScope.updatedBike = args.bike;
-    });*/
 
   }]);

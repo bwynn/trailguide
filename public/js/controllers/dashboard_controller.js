@@ -50,9 +50,9 @@ angular.module('DashboardCtrl', [])
     }
 
     // send current trail details up to rootscope,
-    // this emit is used throughout when trails are selected 
-    $scope.setTrail = function(bike) {
-      console.log(bike);
+    // this emit is used throughout when trails are selected
+    $scope.setTrail = function(currentTrail) {
+      $scope.$emit('setTrailEmit', {trail: currentTrail});
     };
 
     // INIT FUNCTIONS ----------------------------------------------------------
