@@ -5,33 +5,19 @@
     </div>
   </div>
   <div class="trail-recommendation-container">
-    <!-- repeat -->
-    <div class="section-content-container trail-detail-container">
-      <div class="section-content-container">
-        <img class="img gallery-img">
-      </div>
-      <div class="section-container-headline">
-        <h2 class="secondary-headline">Trail Name</h2>
-      </div>
-      <div class="section-content-container">
-        <p class="primary-content">Trail Region, USA</p>
-        <p class="secondary-content">Keywords: Technical, Epic, Downhill, Jumps</p>
-        <a href="#" class="link">Trail Details</a><!-- show on profile page -->
-      </div>
-    </div>
     <!-- repeated trail -->
-    <div class="section-content-container trail-detail-container">
+    <div class="section-content-container trail-detail-container" ng-repeat="trail in trails">
       <div class="section-content-container">
         <img class="img gallery-img">
       </div>
       <div class="section-container-headline">
-        <h2 class="secondary-headline">Trail Name</h2>
+        <h2 class="secondary-headline">{{trail.title}}</h2>
       </div>
       <div class="section-content-container">
-        <p class="primary-content">Trail Region, USA</p>
-        <p class="secondary-content">Keywords: Technical, Epic, Downhill, Jumps</p>
+        <p class="primary-content">{{trail.city || "No city defined"}}</p>
+        <p class="secondary-content">Keywords: <span ng-repeat="keyword in trail.keywords">{{keyword}}, </span></p>
         <!-- link to trail via the /trail/:trail_id or /trail/:trail_name generated dynamically, use a root scope emitter to send iterated trail id details to allow for query in traildetails controller -->
-        <a href="/trail/flow_trail" class="link">Trail Details</a>
+        <a href="/trail/{{trail.title}}" class="link" ng-click="setTrail(trail)">Trail Details</a>
       </div>
     </div>
   </div>

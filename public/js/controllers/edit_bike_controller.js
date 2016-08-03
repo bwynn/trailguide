@@ -17,7 +17,8 @@ angular.module('EditBikeCtrl', [])
 
     // add bike to user record
     $scope.updateBike = function() {
-      profileService.addBike({
+      profileService.updateBike({
+        bikeID: $scope.selectedBike._id,
         brand: $scope.selectedBike.brand,
         year: $scope.selectedBike.year,
         model: $scope.selectedBike.model,
@@ -25,8 +26,7 @@ angular.module('EditBikeCtrl', [])
       }).then(function(data) {
 
         $scope.selectedBike = {}; // clear out for any additions
-        $scope.toggleUpdateBikeForm = false;
-
+        $scope.toggleUpdateBikeForm();
         $scope.dashboardInit();
       });
     };

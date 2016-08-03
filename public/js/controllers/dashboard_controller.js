@@ -49,6 +49,12 @@ angular.module('DashboardCtrl', [])
       });
     }
 
+    // send current trail details up to rootscope,
+    // this emit is used throughout when trails are selected 
+    $scope.setTrail = function(bike) {
+      console.log(bike);
+    };
+
     // INIT FUNCTIONS ----------------------------------------------------------
 
     $scope.dashboardInit = function() {
@@ -61,30 +67,39 @@ angular.module('DashboardCtrl', [])
 
         $scope.$emit('profileEmit', {profile: $scope.user});
       }).then(function() {
-        // get author reviews
-        reviewService.getReviewByAuthor({
-          authorID: $scope.user._id
-        }).then(function(reviewData) {
+        //get queried trails
+        // for dev purposes, pulling all trails. this query
+        // to be modified
+        trailService.getAllTrails().then(function(data) {
+          $scope.trails = data.data;
 
-          $scope.reviews = reviewData.data;
-
-          console.log($scope.reviews);
+          console.log($scope.trails);
         }).then(function() {
+          // get author reviews
+          reviewService.getReviewByAuthor({
+            authorID: $scope.user._id
+          }).then(function(reviewData) {
 
-          // hang on to trail details
-          $scope.reviewedTrails = [];
+            $scope.reviews = reviewData.data;
 
-          // iterate through trails from authored reviews
-          for (var i = 0; i < $scope.reviews.length; i++) {
-            console.log($scope.reviews[i].trailID);
-            trailService.getTrail({
-              id: $scope.reviews[i].trailID
-            }).then(function(trailData) {
-              $scope.reviewedTrails.push(trailData);
+            console.log($scope.reviews);
+          }).then(function() {
 
-              console.log($scope.reviewedTrails);
-            });
-          }
+            // hang on to trail details
+            $scope.reviewedTrails = [];
+
+            // iterate through trails from authored reviews
+            for (var i = 0; i < $scope.reviews.length; i++) {
+              console.log($scope.reviews[i].trailID);
+              trailService.getTrail({
+                id: $scope.reviews[i].trailID
+              }).then(function(trailData) {
+                $scope.reviewedTrails.push(trailData);
+
+                console.log($scope.reviewedTrails);
+              });
+            }
+          });
         });
       });
     };
