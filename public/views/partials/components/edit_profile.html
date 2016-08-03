@@ -1,74 +1,41 @@
-<section class="content-section alert-section" ng-controller="editProfileController">
-  <div class="alerts">
-    <div class="alert-modal">
-      <div class="alert-box">
-        <div class="section-content-container">
-          <div class="close-modal">
-            <span>X</span>
-          </div>
-          <form class="form">
-            <div class="section-container-headline">
-              <h2 class="secondary-headline">Edit Profile</h2>
-            </div>
-            <div class="form-group">
-              <label class="label">Username</label>
-              <input type="text" class="text-input" ng-model="username"/>
-            </div>
-            <div class="form-group">
-              <label class="label">First Name</label>
-              <input type="text" class="text-input" ng-model="firstname"/>
-            </div>
-            <div class="form-group">
-              <label class="label">Last Name</label>
-              <input type="text" class="text-input" ng-model="lastname"/>
-            </div>
-            <div class="form-group">
-              <label class="label">Location</label>
-              <input type="text" class="text-input" placeholder="Eg: Santa Cruz" ng-model="location"/>
-            </div>
-            <div class="form-group">
-              <label class="label">Zip Code</label>
-              <input type="text" class="text-input" ng-model="zipcode"/>
-            </div>
-            <div class="form-group">
-              <label class="label">Years Riding</label>
-              <input type="text" class="text-input" ng-model="experience"/>
-            </div>
-            <div class="form-group">
-              <button class="btn primary-action">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+<div class="modal-window">
+  <div class="close-modal" ng-click="toggleProfileUpdateForm()">
+    <span>X</span>
   </div>
-</section>
-
-<!-- creds: {
-  email: String,
-  password: String,
-  author: Boolean,
-  admin: Boolean
-},
-location: {
-  zipcode: Number,
-  city: String,
-  coords: [Number] // long, lat
-},
-bikes: [{
-  brand: String,
-  year: Number,
-  model: String,
-  picture: {type: Schema.Types.Mixed}
-}],
-profile: {
-  username: String,
-  firstname: String,
-  lastname: String,
-  picture: {type: Schema.Types.Mixed}
-},
-fitness: {
-  experience: String,
-  level: String,
-  preference: String
-} -->
+  <form class="form">
+    <div class="section-container-headline">
+      <h2 class="secondary-headline">Edit Profile</h2>
+    </div>
+    <div class="form-group">
+      <label class="label">Username</label>
+      <input type="text" class="text-input" ng-model="user.profile.username"/>
+    </div>
+    <div class="form-group">
+      <label class="label">First Name</label>
+      <input type="text" class="text-input" ng-model="user.profile.firstname"/>
+    </div>
+    <div class="form-group">
+      <label class="label">Last Name</label>
+      <input type="text" class="text-input" ng-model="user.profile.lastname"/>
+    </div>
+    <div class="form-group">
+      <label class="label">Location</label>
+      <input type="text" class="text-input" ng-model="user.location.city"/>
+    </div>
+    <div class="form-group">
+      <label class="label">Zip Code</label>
+      <input type="number" class="text-input" ng-model="user.location.zipcode"/>
+    </div>
+    <div class="form-group">
+      <label class="label">Fitness Level</label>
+      <input type="text" class="text-input" ng-model="user.fitness.fitnessLevel"/>
+    </div>
+    <div class="form-group">
+      <label class="label">Skill Level</label>
+      <input type="text" class="text-input" ng-model="user.fitness.skillLevel"/>
+    </div>
+    <div class="form-group">
+      <button class="btn primary-action" ng-click="updateProfile(user)">Submit</button>
+    </div>
+  </form>
+</div>

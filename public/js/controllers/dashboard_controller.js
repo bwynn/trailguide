@@ -49,6 +49,18 @@ angular.module('DashboardCtrl', [])
       });
     }
 
+    // EDIT PROFILE FORM CONTROLS & STATES -------------------------------------
+    $scope.editProfileForm = false;
+
+    $scope.toggleProfileUpdateForm = function() {
+      if ($scope.editProfileForm) {
+        $scope.editProfileForm = false;
+      }
+      else {
+        $scope.editProfileForm = true;
+      }
+    }
+
     // send current trail details up to rootscope,
     // this emit is used throughout when trails are selected
     $scope.setTrail = function(currentTrail) {

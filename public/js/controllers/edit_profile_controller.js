@@ -1,4 +1,29 @@
 angular.module('EditProfileCtrl', [])
-  .controller('editProfileController', ['$scope', function($scope) {
+  .controller('editProfileController', ['$scope', '$rootScope', 'profileService', function($scope, $rootScope, profileService) {
 
+    $scope.updateProfile = function(userDetails) {
+
+      profileService.editProfile({
+        zipcode: userDetails.location.zipcode,
+        city: userDetails.location.city,
+        username: userDetails.profile.username,
+        firstname: userDetails.profile.firstname,
+        lastname: userDetails.profile.lastname
+        //coords: userDetails.profile.coords
+      }).then(function(data) {
+
+        console.log(data);
+
+        $scope.$emit('profileEmit', {profile: userDetails});
+        $scope.toggleProfileUpdateForm();
+        $scope.dashboardInit();
+      });
+    };
   }]);
+
+  /*"location.zipcode": req.body.zipcode,
+  "location.city": req.body.city,
+  "profile.username": req.body.username,
+  "profile.firstname": req.body.firstname,
+  "profile.lastname": req.body.lastname,
+  "location.coords": req.body.coords*/

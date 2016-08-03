@@ -12,20 +12,28 @@ exports.getProfile = function(req, res) {
 // Edit Profile
 // /update_profile_details - PUT
 exports.updateProfileDetails = function(req, res) {
-  User.findOne({_id: req.session.passport.user}, function(err, user) {
-    User.update({
-      "location.zipcode": req.body.zip,
-      "location.city": req.body.city,
-      "profile.username": req.body.username,
-      "profile.firstname": req.body.firstname,
-      "profile.lastname": req.body.lastname
-    }, function(err, user) {
-      if (err) {
-        res.send(err);
-      }
 
-      res.json(user);
-    });
+  /*const coords = [],
+        sentCoordinates = req.body.coords;
+
+  for (var i = 0; i < sentCoordinates.length; i++) {
+    var location = parseFloat(sentCoordinates[i]);
+    coords.push(location);
+  }*/
+
+  User.findOneAndUpdate({_id: req.session.passport.user},{
+    "location.zipcode": req.body.zipcode,
+    "location.city": req.body.city,
+    "profile.username": req.body.username,
+    "profile.firstname": req.body.firstname,
+    "profile.lastname": req.body.lastname
+    //"location.coords": req.body.coords
+  }, function(err, user) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(user);
   });
 };
 
@@ -36,8 +44,8 @@ exports.updateProfileDetails = function(req, res) {
 exports.updateFitnessProfile = function(req, res) {
   User.findOne({_id: req.session.passport.user}, function(err, user) {
     User.update({
-      "fitness.experience": req.body.experience,
-      "fitness.level": req.body.level,
+      "fitness.fitnessLevel": req.body.fitnessLevel,
+      "fitness.skillLevel": req.body.skillLevel,
       "fitness.preference": req.body.preference
     }, function(err, user) {
       if (err) {

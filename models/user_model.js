@@ -28,8 +28,8 @@ const UserSchema = new Schema({
     picture: {type: Schema.Types.Mixed}
   },
   fitness: {
-    experience: String,
-    level: String,
+    fitnessLevel: Number,
+    skillLevel: Number,
     preference: String
   }
 });
