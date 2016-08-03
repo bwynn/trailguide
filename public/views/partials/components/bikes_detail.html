@@ -13,8 +13,12 @@
       <div class="section-content-container">
         <img class="img gallery-img" ng-src="{{bike.picture.url}}">
       </div>
-      <div class="section-container-headline">
-        <h2 class="secondary-headline">{{bike.year}} | {{bike.brand}} | {{bike.model}}</h2>
+      <div class="section-content-container">
+        <p class="primary-content"><strong>{{bike.year}} | {{bike.brand}} | {{bike.model}}</strong></p>
+      </div>
+      <div class="section-content-container flex">
+        <button class="btn secondary-action" ng-click="deleteBike(bike)">Delete</button>
+        <button class="btn primary-action" ng-click="toggleUpdateBikeForm(bike)">Update</button>
       </div>
     </div>
   </div>

@@ -2238,11 +2238,6 @@ strong {
           .main-body .outer-wrapper .content-section .inner-wrapper {
             max-width: 910px; } }
 
-.angular-google-map, #map {
-  display: block;
-  height: 400px;
-  width: 400px; }
-
 .style-headline {
   -webkit-display: flex;
   display: flex;
@@ -2253,6 +2248,16 @@ strong {
   background-position: center;
   color: #FDFFFD;
   min-height: 360px; }
+
+.flex {
+  -webkit-display: flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
+  .flex .btn {
+    flex-grow: 1;
+    margin: 9px;
+    box-sizing: border-box; }
 
 h1, h2, h3, p {
   margin: 0;
@@ -2654,10 +2659,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     position: fixed;
     top: 0;
     left: 5%;
-    margin: 0 auto;
+    margin: 18px center;
     background-color: #FDFFFD;
-    z-index: 4;
-    width: 90%; }
+    z-index: 12;
+    width: 90%;
+    padding: 18px; }
     .modal-container .modal-window .form {
       overflow: scroll; }
     @media only screen and (min-width: 700px) {

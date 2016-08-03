@@ -1,0 +1,29 @@
+<div class="modal-window">
+    <div class="close-modal" ng-click="toggleAddBikeForm()">
+      <span>X</span>
+    </div>
+    <form class="form">
+      <div class="section-container-headline">
+        <h2 class="secondary-headline">Update {{selectedBike.model}}</h2>
+      </div>
+      <div class="form-group">
+        <label class="label">Model Year</label>
+        <input type="text" class="text-input" ng-model="selectedBike.year">
+      </div>
+      <div class="form-group">
+        <label class="label">Brand</label>
+        <input type="text" class="text-input" ng-model="selectedBike.brand">
+      </div>
+      <div class="form-group">
+        <label class="label">Model</label>
+        <input type="text" class="text-input" ng-model="selectedBike.model">
+      </div>
+      <div class="form-group">
+        <button class="btn secondary-action" ng-click="updateBikeImage()" ng-hide="bikeImage">Upload Bike Image</button>
+        <img ng-src="{{selectedBike.picture.url}}" class="img featuredImg" ng-model="selectedBike.picture"/>
+      </div>
+      <div class="form-group">
+        <button class="btn primary-action" ng-click="updateBike()">Submit</button>
+      </div>
+    </form>
+</div>

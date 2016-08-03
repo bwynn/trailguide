@@ -12,10 +12,11 @@
     position: fixed;
     top: 0;
     left: $full*.05;
-    margin: 0 auto;
+    margin: $em center;
     background-color: $white;
-    z-index: 4;
+    z-index: 12;
     width: $full*.9;
+    padding: $em;
     .form {
       overflow: scroll;
     }

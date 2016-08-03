@@ -47,10 +47,15 @@ angular.module('MainCtrl', [])
     // =========================================================================
 
     // Add bike watcher
-    $rootScope.$on('newBikeAddedEmit', function(e, args) {
+    /*$rootScope.$on('newBikeAddedEmit', function(e, args) {
       $rootScope.bike = args.bike;
       $rootScope.bike.picture = args.bike.bikeImage;
       $rootScope.user.bikes.push($rootScope.bike);
     });
+
+    // update bike watcher
+    $rootScope.$on('updateBikeEmit', function(e, args) {
+      $rootScope.updatedBike = args.bike;
+    });*/
 
   }]);

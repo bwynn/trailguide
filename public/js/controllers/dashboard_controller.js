@@ -20,41 +20,75 @@ angular.module('DashboardCtrl', [])
       }
     };
 
-    // INIT FUNCTIONS ----------------------------------------------------------
-    // get profile - send to $rootScope
-    profileService.getProfile().then(function(data) {
-      // set user
-      $scope.user = data.data;
+    // UPDATE BIKE FORM CONTROLS & STATES --------------------------------------
 
-      console.log($scope.user);
+    // default form state
+    $scope.editBikeForm = false;
 
-      $scope.$emit('profileEmit', {profile: $scope.user});
-    }).then(function() {
-      // get author reviews
-      reviewService.getReviewByAuthor({
-        authorID: $scope.user._id
-      }).then(function(reviewData) {
+    // toggle form
+    $scope.toggleUpdateBikeForm = function(selectedBike) {
 
-        $scope.reviews = reviewData.data;
+      $scope.selectedBike = selectedBike;
+      console.log($scope.selectedBike);
 
-        console.log($scope.reviews);
+      if ($scope.editBikeForm) {
+        $scope.editBikeForm = false;
+      }
+      else {
+        $scope.editBikeForm = true;
+      }
+    }
+
+    // delete bike
+    $scope.deleteBike = function(_bike) {
+      console.log(_bike._id);
+      profileService.deleteBike({
+        bikeID: _bike._id
       }).then(function() {
-
-        // hang on to trail details
-        $scope.reviewedTrails = [];
-
-        // iterate through trails from authored reviews
-        for (var i = 0; i < $scope.reviews.length; i++) {
-          console.log($scope.reviews[i].trailID);
-          trailService.getTrail({
-            id: $scope.reviews[i].trailID
-          }).then(function(trailData) {
-            $scope.reviewedTrails.push(trailData);
-
-            console.log($scope.reviewedTrails);
-          });
-        }
+        $scope.dashboardInit();
       });
-    });
+    }
+
+    // INIT FUNCTIONS ----------------------------------------------------------
+
+    $scope.dashboardInit = function() {
+      // get profile - send to $rootScope
+      profileService.getProfile().then(function(data) {
+        // set user
+        $scope.user = data.data;
+
+        console.log($scope.user);
+
+        $scope.$emit('profileEmit', {profile: $scope.user});
+      }).then(function() {
+        // get author reviews
+        reviewService.getReviewByAuthor({
+          authorID: $scope.user._id
+        }).then(function(reviewData) {
+
+          $scope.reviews = reviewData.data;
+
+          console.log($scope.reviews);
+        }).then(function() {
+
+          // hang on to trail details
+          $scope.reviewedTrails = [];
+
+          // iterate through trails from authored reviews
+          for (var i = 0; i < $scope.reviews.length; i++) {
+            console.log($scope.reviews[i].trailID);
+            trailService.getTrail({
+              id: $scope.reviews[i].trailID
+            }).then(function(trailData) {
+              $scope.reviewedTrails.push(trailData);
+
+              console.log($scope.reviewedTrails);
+            });
+          }
+        });
+      });
+    };
+
+    $scope.dashboardInit();
 
   }]);

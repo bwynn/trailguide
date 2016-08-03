@@ -1,12 +1,15 @@
 <div class="inner-wrapper">
   <div class="section-content-container">
     <div class="section-container-headline">
-      <h2 class="secondary-headline">About User</h2>
+      <h2 class="secondary-headline">About {{user.profile.firstname}}</h2>
     </div>
     <p class="primary-content bold"><strong>Likes these kinds of rides:</strong></p>
     <p class="primary-content">{{user.fitness.preference}}</p>
-    <p class="primary-content bold"><strong>Comfort Level</strong></p>
+    <p class="primary-content bold"><strong>Riding Level</strong></p>
     <div class="skill-container">
+      <div class="skill-icon green-circle"></div>
+      <div class="skill-icon blue-square"></div>
+      <div class="skill-icon black-diamond"></div>
       <div class="skill-icon double-black-diamond">
         <div class="skill-icon black-diamond"></div>
         <div class="skill-icon black-diamond"></div>

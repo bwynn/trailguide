@@ -50,12 +50,6 @@ strong {
   }
 }
 
-.angular-google-map, #map {
-  display: block;
-  height: 400px;
-  width: 400px;
-}
-
 // style guide declarations - exclusive to formatting of style guide
 .style-headline {
   @include flex;
@@ -65,4 +59,15 @@ strong {
   background-position: center;
   color: $white;
   min-height: $em*20;
+}
+
+//custom classes
+.flex {
+  @include flex;
+  @include flex-wrap;
+  .btn {
+    flex-grow: 1;
+    margin: $em/2;
+    box-sizing: border-box;
+  }
 }

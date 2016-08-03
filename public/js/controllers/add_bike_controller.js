@@ -25,10 +25,10 @@ angular.module('AddBikeCtrl', [])
         model: $scope.bike.model,
         image: $scope.bike.bikeImage
       }).then(function(data) {
-        $scope.$emit('newBikeAddedEmit', {bike: $scope.bike});
-
         $scope.bike = {}; // clear out for any additions
         $scope.showAddBikeForm = false;
+
+        $scope.dashboardInit();
       });
     };
 
