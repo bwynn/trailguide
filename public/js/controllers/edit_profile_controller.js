@@ -26,10 +26,3 @@ angular.module('EditProfileCtrl', [])
       });
     };
   }]);
-
-  /*"location.zipcode": req.body.zipcode,
-  "location.city": req.body.city,
-  "profile.username": req.body.username,
-  "profile.firstname": req.body.firstname,
-  "profile.lastname": req.body.lastname,
-  "location.coords": req.body.coords*/

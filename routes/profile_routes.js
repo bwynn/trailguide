@@ -14,7 +14,7 @@ module.exports = function(app, passport) {
   app.put('/update_fitness_profile', loggedIn, profileCtrl.updateFitnessProfile); // √
 
   // update profile picture
-  app.put('/update_profile_picture', loggedIn, profileCtrl.updateProfilePicture);
+  app.put('/update_profile_picture', loggedIn, profileCtrl.updateProfilePicture); // √
 
   // add bike
   app.put('/add_bike', loggedIn, profileCtrl.addBike); // √
@@ -23,7 +23,13 @@ module.exports = function(app, passport) {
   app.put('/update_bike', loggedIn, profileCtrl.updateBike); // √
 
   // delete bike
-  app.put('/delete_bike', loggedIn, profileCtrl.deleteBike); 
+  app.put('/delete_bike', loggedIn, profileCtrl.deleteBike);
+
+  // get user
+  app.post('/get_user', profileCtrl.getUser);
+
+  // get all users
+  app.get('/get_all_users', profileCtrl.getAllUsers);
 };
 
 function loggedIn(req, res, next) {

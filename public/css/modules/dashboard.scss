@@ -21,10 +21,6 @@
   @include align-items;
   margin-top: $em*3;
   .section-content-container {
-    .img {
-      background-color: $grey;
-      height: $em*10;
-    }
     .section-container-headline {
       .primary-headline, .secondary-headline {
         text-align: center;

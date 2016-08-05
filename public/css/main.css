@@ -2380,7 +2380,7 @@ h1, h2, h3, p {
   background-color: #FDFFFD;
   display: block; }
   .img.portrait {
-    width: 180px;
+    max-width: 180px;
     height: auto;
     margin: 0 auto; }
   .img.featured-img {
@@ -2695,9 +2695,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   -webkit-align-items: center;
   align-items: center;
   margin-top: 54px; }
-  .profile-section .section-content-container .img {
-    background-color: #CBCFCC;
-    height: 180px; }
   .profile-section .section-content-container .section-container-headline .primary-headline, .profile-section .section-content-container .section-container-headline .secondary-headline {
     text-align: center; }
   .profile-section .section-content-container .section-content-container .primary-content, .profile-section .section-content-container .section-content-container .secondary-content {

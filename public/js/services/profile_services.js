@@ -21,6 +21,12 @@ angular.module('ProfileService', [])
       },
       deleteBike: function(data) {
         return $http.put('/delete_bike', data);
+      },
+      getUser: function(data) {
+        return $http.post('/get_user', data);
+      },
+      getAllUsers: function() {
+        return $http.get('/get_all_users');
       }
     };
   }]);

@@ -40,6 +40,14 @@ angular.module('AppRoutes', [])
         templateUrl: 'views/trail_details.html',
         controller: 'trailDetailsController'
       }).
+      when('/users', {
+        templateUrl: 'views/user_list.html',
+        controller: 'userListController'
+      }).
+      when('/users/:username', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'userController'
+      }).
       otherwise('/login', {
         templateUrl: 'views/login.html',
         controller: 'loginController'

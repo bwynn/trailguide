@@ -5,7 +5,7 @@
   background-color: $white;
   display: block;
   &.portrait {
-    width: $em*10;
+    max-width: $em*10;
     height: auto;
     margin: $center;
   }

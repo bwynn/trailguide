@@ -9,6 +9,30 @@ exports.getProfile = function(req, res) {
   });
 };
 
+// Get User
+// /get_user - POST
+exports.getUser = function(req, res) {
+  User.findOne({_id: req.body.id}, function(err, user) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(user);
+  });
+};
+
+// Get All Users
+// /get_all_users - GET
+exports.getAllUsers = function(req, res) {
+  User.find(function(err, users) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(users);
+  });
+};
+
 // Edit Profile
 // /update_profile_details - PUT
 exports.updateProfileDetails = function(req, res) {
@@ -60,6 +84,8 @@ exports.updateFitnessProfile = function(req, res) {
 // Edit Profile Picture
 // /update_profile_picture - PUT
 exports.updateProfilePicture = function(req, res) {
+  console.log(req.body);
+  console.log(req.session.passport.user);
   User.findOne({_id: req.session.passport.user}, function(err, user) {
     User.update({
       "profile.picture": req.body.image
