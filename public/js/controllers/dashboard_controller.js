@@ -1,5 +1,5 @@
 angular.module('DashboardCtrl', [])
-  .controller('dashboardController', ['$scope', '$rootScope', 'profileService', 'reviewService', 'trailService', function($scope, $rootScope, profileService, reviewService, trailService) {
+  .controller('dashboardController', ['$scope', '$rootScope', 'profileService', 'reviewService', 'trailService', 'filepickerService', function($scope, $rootScope, profileService, reviewService, trailService, filepickerService) {
 
     // set default state
     $scope.loggedIn = true;
@@ -65,6 +65,28 @@ angular.module('DashboardCtrl', [])
     // this emit is used throughout when trails are selected
     $scope.setTrail = function(currentTrail) {
       $scope.$emit('setTrailEmit', {trail: currentTrail});
+    };
+
+    // ADD PROFILE IMAGE -------------------------------------------------------
+    $scope.updateProfilePicture = function() {
+      filepickerService.pick({
+        mimetype: 'image/*',
+        language: 'en',
+        services: ['COMPUTER', 'DROPBOX', 'GOOGLE_DRIVE', 'IMAGE_SEARCH'],
+        openTo: 'IMAGE_SEARCH'
+      },
+      function(Blob) {
+        $scope.user.profile.picture = Blob;
+
+        $scope.$apply();
+
+        profileService.updateProfilePicture({
+          image: $scope.user.profile.picture
+        }).then(function(data) {
+          console.log(data);
+          $scope.dashboardInit();
+        });
+      });
     };
 
     // INIT FUNCTIONS ----------------------------------------------------------

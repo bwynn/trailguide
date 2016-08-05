@@ -1,6 +1,7 @@
 <div class="inner-wrapper">
   <div class="section-content-container">
-    <img class="img portrait" src=""/>
+    <img class="img portrait" ng-src="{{user.profile.picture.url}}"/>
+    <button class="btn primary-action" ng-click="updateProfilePicture()">Add Profile Image</button>
   </div>
   <div class="section-content-container">
     <div class="section-container-headline">
