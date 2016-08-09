@@ -28,7 +28,7 @@ const options = {
 };
 
 // connect to db
-mongoose.connect(db.db);
+mongoose.connect(process.env.MONGODB_URI || db.db);
 
 // add passport config
 require('./config/passport')(passport);
