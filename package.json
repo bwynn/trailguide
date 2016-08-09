@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/bwynn/trailguide.git"
   },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
   "dependencies": {
     "express": "latest",
     "body-parser": "latest",
@@ -17,7 +20,8 @@
     "passport": "latest",
     "passport-local": "latest",
     "connect-flash": "latest",
-    "express-session": "latest"
+    "express-session": "latest",
+    "bower": "latest"
   },
   "engines": {
     "node": "0.12.2"
