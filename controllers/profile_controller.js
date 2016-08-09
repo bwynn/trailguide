@@ -85,9 +85,10 @@ exports.updateFitnessProfile = function(req, res) {
 // /update_profile_picture - PUT
 exports.updateProfilePicture = function(req, res) {
   console.log(req.body);
+  console.log(req.session);
   console.log(req.session.passport.user);
   User.findOne({_id: req.session.passport.user}, function(err, user) {
-    User.update({
+    User.update({_id: req.body.id}, {
       "profile.picture": req.body.image
     }, function(err, user) {
       if (err) {

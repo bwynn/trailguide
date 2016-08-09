@@ -69,25 +69,20 @@ angular.module('DashboardCtrl', [])
 
     // ADD PROFILE IMAGE -------------------------------------------------------
     $scope.updateProfilePicture = function() {
-
-      filepickerService.pick({
-        mimetype: 'image/*',
-        language: 'en',
-        services: ['COMPUTER', 'DROPBOX', 'GOOGLE_DRIVE', 'IMAGE_SEARCH'],
-        openTo: 'IMAGE_SEARCH'
-      },
-      function(Blob) {
-        $scope.picture = Blob;
-
-        console.log($scope.picture)
-
-        $scope.$apply();
+       filepickerService.pick({
+         mimetype: 'image/*',
+         language: 'en',
+         services: ['COMPUTER', 'DROPBOX', 'GOOGLE_DRIVE', 'IMAGE_SEARCH'],
+         openTo: 'IMAGE_SEARCH'
+       },
+       function(Blob) {
+         $scope.user.profile.picture = Blob;
+         $scope.$apply();
 
         profileService.updateProfilePicture({
-          image: $scope.picture
-        }).then(function(data) {
-
-          $scope.user.profile = undefined;
+          image: $scope.user.profile.picture,
+          id: $scope.user._id
+         }).then(function(data) {
           console.log(data);
           $scope.dashboardInit();
         });
