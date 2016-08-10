@@ -2,14 +2,14 @@
 .modal-container {
   z-index: 2;
   height: $full;
-  min-height: $full;
+  //min-height: $full;
   width: $full;
   top: 0;
   left: 0;
   background-color: $black;
-  overflow: scroll;
+  //overflow: scroll;
   .modal-window {
-    position: fixed;
+    position: relative;
     top: 0;
     left: $full*.05;
     margin: $em center;
@@ -18,7 +18,7 @@
     width: $full*.9;
     padding: $em;
     .form {
-      overflow: scroll;
+      height: $full;
     }
     @include medium {
       width: $full*.6;

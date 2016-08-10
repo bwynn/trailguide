@@ -2195,6 +2195,16 @@
   src: url("../libs/font-awesome/fonts/fontawesome-webfont.woff2");
   font-weight: normal;
   font-style: normal; }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 body {
   font-family: "Oxygen", sans-serif;
   font-size: 18px;
@@ -2256,7 +2266,7 @@ strong {
   flex-flow: row wrap; }
   .flex .btn {
     flex-grow: 1;
-    margin: 9px;
+    margin: 18px;
     box-sizing: border-box; }
 
 h1, h2, h3, p {
@@ -2377,17 +2387,36 @@ h1, h2, h3, p {
 .img {
   width: 100%;
   max-width: 100%;
-  background-color: #FDFFFD;
-  display: block; }
+  display: block;
+  background-color: #CBCFCC; }
   .img.portrait {
-    max-width: 180px;
+    max-width: 270px;
     height: auto;
-    margin: 0 auto; }
+    margin: 0 auto;
+    border: 1.125px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 2.25px;
+    position: relative; }
+    @media only screen and (min-width: 700px) {
+      .img.portrait {
+        margin-left: 0; } }
   .img.featured-img {
     height: auto; }
   .img.gallery-img {
     height: auto;
     min-width: 270px; }
+
+.image-upload-icon {
+  height: 36px;
+  width: 38.7px;
+  overflow: hidden;
+  background-color: #FDFFFD;
+  border-radius: 2.25px;
+  border: 1.125px solid #2f2f2f;
+  box-sizing: border-box;
+  box-sizing: border-box; }
+  .image-upload-icon:hover {
+    background-color: #CBCFCC; }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
   outline: none; }
@@ -2649,14 +2678,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .modal-container {
   z-index: 2;
   height: 100%;
-  min-height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #2f2f2f;
-  overflow: scroll; }
+  background-color: #2f2f2f; }
   .modal-container .modal-window {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 5%;
     margin: 18px center;
@@ -2665,7 +2692,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     width: 90%;
     padding: 18px; }
     .modal-container .modal-window .form {
-      overflow: scroll; }
+      height: 100%; }
     @media only screen and (min-width: 700px) {
       .modal-container .modal-window {
         width: 60%;
@@ -2695,10 +2722,55 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   -webkit-align-items: center;
   align-items: center;
   margin-top: 54px; }
+  .profile-section .inner-wrapper {
+    -webkit-display: flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap; }
+    .profile-section .inner-wrapper .profile-picture, .profile-section .inner-wrapper .profile-details {
+      width: 100%; }
+      @media only screen and (min-width: 700px) {
+        .profile-section .inner-wrapper .profile-picture, .profile-section .inner-wrapper .profile-details {
+          width: 50%; } }
+  .profile-section .section-content-container.profile-picture {
+    position: relative;
+    z-index: 1; }
+    .profile-section .section-content-container.profile-picture .image-upload-icon {
+      position: relative;
+      z-index: 2;
+      display: block;
+      margin: 0 auto 0 61vw;
+      top: -39.6px; }
+      @media only screen and (min-width: 700px) {
+        .profile-section .section-content-container.profile-picture .image-upload-icon {
+          left: 226.98px;
+          margin: 0;
+          display: none;
+          transition: 0.1s all ease-in-out;
+          animation: .3s fadeOut; } }
+    .profile-section .section-content-container.profile-picture:hover .image-upload-icon {
+      display: block;
+      cursor: pointer;
+      animation: .3s fadeIn; }
+  .profile-section .section-content-container.profile-details {
+    /*@include medium {
+      width: $full*.5;
+      display: inline-block;
+    }*/ }
+    .profile-section .section-content-container.profile-details .section-content-container:first-child {
+      padding: 0; }
+      .profile-section .section-content-container.profile-details .section-content-container:first-child .secondary-headline {
+        line-height: 1; }
   .profile-section .section-content-container .section-container-headline .primary-headline, .profile-section .section-content-container .section-container-headline .secondary-headline {
     text-align: center; }
+    @media only screen and (min-width: 700px) {
+      .profile-section .section-content-container .section-container-headline .primary-headline, .profile-section .section-content-container .section-container-headline .secondary-headline {
+        text-align: left; } }
   .profile-section .section-content-container .section-content-container .primary-content, .profile-section .section-content-container .section-content-container .secondary-content {
     text-align: center; }
+    @media only screen and (min-width: 700px) {
+      .profile-section .section-content-container .section-content-container .primary-content, .profile-section .section-content-container .section-content-container .secondary-content {
+        text-align: left; } }
 
 .bikes-section .inner-wrapper .bike-collection-container {
   flex: none; }

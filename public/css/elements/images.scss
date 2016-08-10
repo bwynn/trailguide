@@ -2,12 +2,18 @@
 .img {
   width: $full;
   max-width: $full;
-  background-color: $white;
   display: block;
+  background-color: $grey;
   &.portrait {
-    max-width: $em*10;
+    max-width: $em*15;
     height: auto;
     margin: $center;
+    @include borders($black);
+    border-radius: $rounded;
+    position: relative;
+    @include medium {
+      margin-left: 0;
+    }
   }
   &.featured-img {
     height: auto;
@@ -15,5 +21,19 @@
   &.gallery-img {
     height: auto;
     min-width: $em*15;
+  }
+}
+
+// change/modify image button
+.image-upload-icon {
+  height: $em*2;
+  width: $em*2.15;
+  overflow: hidden;
+  background-color: $white;
+  border-radius: $rounded;
+  @include borders($black);
+  box-sizing: border-box;
+  &:hover {
+    background-color: $grey;
   }
 }

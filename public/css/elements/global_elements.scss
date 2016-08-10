@@ -67,7 +67,7 @@ strong {
   @include flex-wrap;
   .btn {
     flex-grow: 1;
-    margin: $em/2;
+    margin: $em;
     box-sizing: border-box;
   }
 }

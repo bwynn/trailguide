@@ -20,15 +20,71 @@
   @include flex;
   @include align-items;
   margin-top: $em*3;
+  .inner-wrapper {
+    @include flex;
+    @include flex-wrap;
+    .profile-picture, .profile-details {
+      width: $full;
+      @include medium {
+        width: $full*.5;
+      }
+    }
+  }
   .section-content-container {
+    &.profile-picture {
+      position: relative;
+      z-index: 1;
+      .image-upload-icon {
+        position: relative;
+        z-index: 2;
+        display: block;
+        margin: 0 auto 0 61vw;
+        top: $em*-2.2;
+        @include medium {
+          left: $em*12.61;
+          margin: 0;
+          display: none;
+          @include transition(.1s, ease-in-out);
+          animation: .3s fadeOut;
+        }
+      }
+      &:hover {
+        .image-upload-icon {
+          display: block;
+          cursor: pointer;
+          animation: .3s fadeIn;
+        }
+      }
+      @include medium {
+        //width: $full*.5;
+      }
+    }
+    &.profile-details {
+      .section-content-container:first-child {
+        padding: 0;
+        .secondary-headline {
+          line-height: 1;
+        }
+      }
+      /*@include medium {
+        width: $full*.5;
+        display: inline-block;
+      }*/
+    }
     .section-container-headline {
       .primary-headline, .secondary-headline {
         text-align: center;
+        @include medium {
+          text-align: left;
+        }
       }
     }
     .section-content-container {
       .primary-content, .secondary-content {
         text-align: center;
+        @include medium {
+          text-align: left;
+        }
       }
     }
   }
