@@ -2408,7 +2408,7 @@ h1, h2, h3, p {
 
 .image-upload-icon {
   height: 36px;
-  width: 38.7px;
+  width: 39.96px;
   overflow: hidden;
   background-color: #FDFFFD;
   border-radius: 2.25px;
@@ -2735,32 +2735,57 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   .profile-section .section-content-container.profile-picture {
     position: relative;
     z-index: 1; }
-    .profile-section .section-content-container.profile-picture .image-upload-icon {
-      position: relative;
-      z-index: 2;
-      display: block;
-      margin: 0 auto 0 61vw;
-      top: -39.6px; }
+    .profile-section .section-content-container.profile-picture .profile-picture-container {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 270px; }
+      .profile-section .section-content-container.profile-picture .profile-picture-container .image-upload-icon {
+        position: relative;
+        z-index: 2;
+        display: block;
+        margin: 0 auto 0 190px;
+        top: -39.6px;
+        transition: 0.1s all ease-in-out;
+        animation: .3s fadeOut; }
+        .profile-section .section-content-container.profile-picture .profile-picture-container .image-upload-icon .fa-camera-retro {
+          margin: -1px 0 1px 1px; }
+        @media only screen and (min-width: 700px) {
+          .profile-section .section-content-container.profile-picture .profile-picture-container .image-upload-icon {
+            visibility: hidden; } }
+      .profile-section .section-content-container.profile-picture .profile-picture-container:hover .image-upload-icon {
+        visibility: visible;
+        cursor: pointer;
+        animation: .3s fadeIn; }
       @media only screen and (min-width: 700px) {
-        .profile-section .section-content-container.profile-picture .image-upload-icon {
-          left: 226.98px;
-          margin: 0;
-          display: none;
-          transition: 0.1s all ease-in-out;
-          animation: .3s fadeOut; } }
-    .profile-section .section-content-container.profile-picture:hover .image-upload-icon {
-      display: block;
-      cursor: pointer;
-      animation: .3s fadeIn; }
-  .profile-section .section-content-container.profile-details {
-    /*@include medium {
-      width: $full*.5;
-      display: inline-block;
-    }*/ }
-    .profile-section .section-content-container.profile-details .section-content-container:first-child {
-      padding: 0; }
-      .profile-section .section-content-container.profile-details .section-content-container:first-child .secondary-headline {
-        line-height: 1; }
+        .profile-section .section-content-container.profile-picture .profile-picture-container {
+          max-width: 270px; } }
+    @media only screen and (min-width: 700px) {
+      .profile-section .section-content-container.profile-picture {
+        max-width: 270px; } }
+  .profile-section .section-content-container.profile-details .section-content-container .edit-profile-btn {
+    height: 37.98px;
+    width: 37.98px;
+    display: block;
+    visibility: hidden;
+    color: #CBCFCC;
+    transition: 0.1s all ease-in-out;
+    animation: .3s fadeOut; }
+    .profile-section .section-content-container.profile-details .section-content-container .edit-profile-btn .fa-pencil-square-o {
+      margin: 9.99px 1.125px; }
+  .profile-section .section-content-container.profile-details .section-content-container:first-child {
+    padding: 0; }
+    .profile-section .section-content-container.profile-details .section-content-container:first-child .secondary-headline {
+      line-height: 1; }
+  .profile-section .section-content-container.profile-details .section-content-container:last-child {
+    padding-bottom: 0; }
+    .profile-section .section-content-container.profile-details .section-content-container:last-child .primary-content:last-child {
+      margin-bottom: 0; }
+  .profile-section .section-content-container.profile-details:hover .edit-profile-btn {
+    visibility: visible;
+    animation: .3s fadeIn; }
+    .profile-section .section-content-container.profile-details:hover .edit-profile-btn .fa-pencil-square-o {
+      color: #2f2f2f;
+      cursor: pointer; }
   .profile-section .section-content-container .section-container-headline .primary-headline, .profile-section .section-content-container .section-container-headline .secondary-headline {
     text-align: center; }
     @media only screen and (min-width: 700px) {

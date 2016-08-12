@@ -34,42 +34,77 @@
     &.profile-picture {
       position: relative;
       z-index: 1;
-      .image-upload-icon {
-        position: relative;
-        z-index: 2;
-        display: block;
-        margin: 0 auto 0 61vw;
-        top: $em*-2.2;
-        @include medium {
-          left: $em*12.61;
-          margin: 0;
-          display: none;
+      .profile-picture-container {
+        width: $full;
+        margin: 0 auto;
+        max-width: 270px;
+        .image-upload-icon {
+          position: relative;
+          z-index: 2;
+          display: block;
+          margin: 0 auto 0 190px;
+          top: $em*-2.2;
           @include transition(.1s, ease-in-out);
           animation: .3s fadeOut;
+          .fa-camera-retro {
+            margin: -1px 0 1px 1px;
+          }
+          @include medium {
+            visibility: hidden;
+          }
         }
-      }
-      &:hover {
-        .image-upload-icon {
-          display: block;
-          cursor: pointer;
-          animation: .3s fadeIn;
+        &:hover {
+          .image-upload-icon {
+            visibility: visible;
+            cursor: pointer;
+            animation: .3s fadeIn;
+          }
+        }
+        @include medium {
+          max-width: 270px;
         }
       }
       @include medium {
-        //width: $full*.5;
+        max-width: 270px;
       }
     }
     &.profile-details {
+      .section-content-container {
+        .edit-profile-btn {
+          height: $em*2.11;
+          width: $em*2.11;
+          display: block;
+          visibility: hidden;
+          color: $grey;
+          @include transition(.1s, ease-in-out);
+          animation: .3s fadeOut;
+          .fa-pencil-square-o {
+            margin: $em*.555 $em/16;
+          }
+        }
+      }
       .section-content-container:first-child {
         padding: 0;
         .secondary-headline {
           line-height: 1;
         }
       }
-      /*@include medium {
-        width: $full*.5;
-        display: inline-block;
-      }*/
+      .section-content-container:last-child {
+        padding-bottom: 0;
+        .primary-content:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &:hover {
+        .edit-profile-btn {
+          visibility: visible;
+          animation: .3s fadeIn;
+          .fa-pencil-square-o {
+            color: $black;
+            cursor: pointer;
+          }
+        }
+      }
     }
     .section-container-headline {
       .primary-headline, .secondary-headline {

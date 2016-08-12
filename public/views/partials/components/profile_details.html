@@ -1,7 +1,9 @@
 <div class="inner-wrapper">
   <div class="section-content-container profile-picture">
-    <img class="img portrait" ng-src="{{user.profile.picture.url}}"/>
-    <div class="image-upload-icon" ng-click="updateProfilePicture()"><i class="fa fa-camera-retro fa-2x"></i></div>
+    <div class="profile-picture-container">
+      <img class="img portrait" ng-src="{{user.profile.picture.url}}">
+      <div class="image-upload-icon" ng-click="updateProfilePicture()"><i class="fa fa-camera-retro fa-2x"></i></div>
+    </div>
   </div>
   <div class="section-content-container profile-details">
     <div class="section-content-container">
@@ -14,7 +16,9 @@
       </div>
     </div>
     <div class="section-content-container">
-      <button class="btn primary-action" ng-click="toggleProfileUpdateForm()">Edit Profile</button>
+      <div class="edit-profile-btn"  ng-click="toggleProfileUpdateForm()">
+        <i class="fa fa-pencil-square-o"></i>
+      </div>
     </div>
   </div>
 </div>
