@@ -73,7 +73,7 @@
       .section-content-container {
         .edit-profile-btn {
           height: $em*2.11;
-          width: $em*2.11;
+          width: $full;
           display: block;
           color: $grey;
           @include transition(.1s, ease-in-out);
@@ -103,9 +103,9 @@
       &:hover {
         .edit-profile-btn {
           animation: .3s fadeIn;
+          cursor: pointer;
           .fa-pencil-square-o {
             color: $black;
-            cursor: pointer;
           }
           @include medium {
             visibility: visible;

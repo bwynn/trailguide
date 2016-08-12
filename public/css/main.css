@@ -2765,7 +2765,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         max-width: 270px; } }
   .profile-section .section-content-container.profile-details .section-content-container .edit-profile-btn {
     height: 37.98px;
-    width: 37.98px;
+    width: 100%;
     display: block;
     color: #CBCFCC;
     transition: 0.1s all ease-in-out;
@@ -2786,10 +2786,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     .profile-section .section-content-container.profile-details .section-content-container:last-child .primary-content:last-child {
       margin-bottom: 0; }
   .profile-section .section-content-container.profile-details:hover .edit-profile-btn {
-    animation: .3s fadeIn; }
+    animation: .3s fadeIn;
+    cursor: pointer; }
     .profile-section .section-content-container.profile-details:hover .edit-profile-btn .fa-pencil-square-o {
-      color: #2f2f2f;
-      cursor: pointer; }
+      color: #2f2f2f; }
     @media only screen and (min-width: 700px) {
       .profile-section .section-content-container.profile-details:hover .edit-profile-btn {
         visibility: visible; } }

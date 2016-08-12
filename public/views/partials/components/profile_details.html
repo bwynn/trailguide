@@ -2,7 +2,7 @@
   <div class="section-content-container profile-picture">
     <div class="profile-picture-container">
       <img class="img portrait" ng-src="{{user.profile.picture.url}}">
-      <div class="image-upload-icon" ng-click="updateProfilePicture()"><i class="fa fa-camera-retro fa-2x"></i></div>
+      <div class="image-upload-icon" ng-click="updateProfilePicture()" ng-show="{{user}}"><i class="fa fa-camera-retro fa-2x"></i></div>
     </div>
   </div>
   <div class="section-content-container profile-details">
@@ -16,8 +16,8 @@
       </div>
     </div>
     <div class="section-content-container">
-      <div class="edit-profile-btn"  ng-click="toggleProfileUpdateForm()">
-        <i class="fa fa-pencil-square-o"></i>
+      <div class="edit-profile-btn"  ng-click="toggleProfileUpdateForm()" ng-show="{{user}}">
+        <i class="fa fa-pencil-square-o"></i><span class="secondary-content"> Edit Profile</span>
       </div>
     </div>
   </div>
