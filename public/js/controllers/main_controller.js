@@ -40,7 +40,8 @@ angular.module('MainCtrl', [])
     // profile emit - get profile details
     $rootScope.$on('profileEmit', function(e, args) {
       $rootScope.user = args.profile;
-      //console.log($rootScope.user);
+      $scope.trailDetail = false;
+      console.log($scope.trailDetail);
     });
 
     // DIGEST CYCLE EMIT WATCHERS
@@ -49,6 +50,12 @@ angular.module('MainCtrl', [])
     // set current trail via lower scope emits
     $rootScope.$on('setTrailEmit', function(e, args) {
       $rootScope.currentTrail = args.trail;
+    });
+
+    // trail detail emit
+    $rootScope.$on('trailDetailEmit', function(e) {
+      $scope.trailDetail = true;
+      console.log($scope.trailDetail);
     });
 
   }]);

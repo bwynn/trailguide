@@ -5,13 +5,16 @@
     </div>
   </div>
   <div class="review-container">
+    <div class="section-content-container" ng-show="trailDetail">
+      <button class="btn primary-action" ng-click="showReviewForm()">Write a Review</button>
+    </div>
     <!-- repeat -->
     <div class="section-content-container review-detail-container" ng-repeat="review in reviews track by $index">
       <div class="section-content-container">
 
         <div class="section-headline-container">
           <h2 class="secondary-headline">{{review.trailTitle}}</h2>
-          <span class="secondary-content" ng-show="totalTrails">(198 reviews)</span><!-- hide this element when in dashboard show in trail details template -->
+          <span class="secondary-content" ng-show="trailDetail">({{totalReviews}} reviews)</span><!-- hide this element when in dashboard show in trail details template -->
         </div>
         <div class="section-content-container">
           <p class="secondary-content"><strong>by: </strong> {{user.profile.username}}</p>

@@ -4,10 +4,10 @@ angular.module('ReviewService', [])
       getReviews: function() {
         return $http.get('/get_reviews');
       },
-      getReviewByAuthor: function(data) {
+      getReviewsByAuthor: function(data) {
         return $http.post('/get_review_author', data);
       },
-      getReviewByTrail: function(data) {
+      getReviewsByTrail: function(data) {
         return $http.post('/get_review_trail', data);
       },
       getReviewByID: function(data) {

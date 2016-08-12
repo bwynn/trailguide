@@ -110,7 +110,7 @@ angular.module('DashboardCtrl', [])
           console.log($scope.trails);
         }).then(function() {
           // get author reviews
-          reviewService.getReviewByAuthor({
+          reviewService.getReviewsByAuthor({
             authorID: $scope.user._id
           }).then(function(reviewData) {
 

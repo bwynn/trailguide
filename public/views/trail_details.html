@@ -1,4 +1,4 @@
-<div class="outer-wrapper">
+<div class="outer-wrapper" id="form-anchor">
   <section class="content-section style-headline"></section>
 
   <section class="content-section trail-details" ng-include="'views/partials/components/trail_section.html'"></section>
@@ -6,4 +6,6 @@
   <section class="content-section access-section" ng-include="'views/partials/components/access_template.html'"></section>
 
   <section class="content-section review-section" ng-include="'views/partials/components/review_details.html'"></section>
+
+  <section class="content-section modal-container" ng-include="'views/partials/components/add_review.html'" ng-controller="addReviewController" ng-show="addReviewForm"></section>
 </div>

@@ -1,38 +1,30 @@
-<section class="content-section alert-section" ng-controller="addReviewController">
-  <div class="alerts">
-    <div class="alert-modal">
-      <div class="alert-box">
-        <div class="section-content-container">
-          <div class="close-modal">
-            <span>X</span>
-          </div>
-          <form class="form">
-            <div class="section-container-headline">
-              <h2 class="secondary-headline">Add Review</h2>
-            </div>
-            <div class="form-group">
-              <label class="label">Rating</label>
-              <div ng-include="'views/partials/components/rating_template.html'"></div>
-            </div>
-            <div class="form-group">
-              <label class="label">Write a review</label>
-              <textarea class="text-area"></textarea>
-            </div>
-            <div class="form-group">
-              <label class="label">Upload a picture of the trail</label>
-              <div class="section-content-container"><!-- ng-repeat for multiple uploaded images-->
-                <img class="img gallery-img" src="#"/>
-              </div>
-              <div class="section-content-container">
-                <button class="btn btn-secondary">Upload Pictures</button>
-              </div>
-            </div>
-            <div class="form-group">
-              <button class="btn primary-action">Submit</button>
-            </div>
-          </form>
-        </div>
+<div class="modal-window">
+  <div class="close-modal" ng-click="showReviewForm()">
+    <span>X</span>
+  </div>
+  <form class="form">
+    <div class="section-container-headline">
+      <h2 class="secondary-headline">Add Review</h2>
+    </div>
+    <div class="form-group">
+      <label class="label">Rating</label>
+      <div ng-include="'views/partials/components/rating_template.html'"></div>
+    </div>
+    <div class="form-group">
+      <label class="label">Write a review</label>
+      <textarea class="text-area"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="label">Upload a picture of the trail</label>
+      <div class="section-content-container"><!-- ng-repeat for multiple uploaded images-->
+        <img class="img gallery-img" src="#"/>
+      </div>
+      <div class="section-content-container">
+        <button class="btn btn-secondary">Upload Pictures</button>
       </div>
     </div>
-  </div>
-</section>
+    <div class="form-group">
+      <button class="btn primary-action">Submit</button>
+    </div>
+  </form>
+</div>

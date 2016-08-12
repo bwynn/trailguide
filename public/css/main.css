@@ -2685,7 +2685,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   .modal-container .modal-window {
     position: relative;
     top: 0;
-    left: 5%;
+    left: 1.5%;
     margin: 18px center;
     background-color: #FDFFFD;
     z-index: 12;
@@ -2708,7 +2708,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   color: #2f2f2f; }
 
 .profile-section .section-container-headline, .bikes-section .section-container-headline, .review-section .section-container-headline, .recommended-trails .section-container-headline, .experience-section .section-container-headline {
-  padding-left: 18px; }
+  padding: 0 18px; }
 
 .bike-collection-container .section-content-container .section-container-headline, .trail-recommendation-container .section-content-container .section-container-headline {
   padding-left: 0; }
@@ -2743,7 +2743,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         position: relative;
         z-index: 2;
         display: block;
-        margin: 0 auto 0 190px;
+        margin: 0 auto 0 226.98px;
         top: -39.6px;
         transition: 0.1s all ease-in-out;
         animation: .3s fadeOut; }
@@ -2751,7 +2751,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
           margin: -1px 0 1px 1px; }
         @media only screen and (min-width: 700px) {
           .profile-section .section-content-container.profile-picture .profile-picture-container .image-upload-icon {
-            visibility: hidden; } }
+            visibility: hidden;
+            margin: 0 auto 0 189.9px; } }
       .profile-section .section-content-container.profile-picture .profile-picture-container:hover .image-upload-icon {
         visibility: visible;
         cursor: pointer;
@@ -2766,12 +2767,16 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     height: 37.98px;
     width: 37.98px;
     display: block;
-    visibility: hidden;
     color: #CBCFCC;
     transition: 0.1s all ease-in-out;
-    animation: .3s fadeOut; }
+    animation: .3s fadeOut;
+    margin: 0 auto; }
     .profile-section .section-content-container.profile-details .section-content-container .edit-profile-btn .fa-pencil-square-o {
       margin: 9.99px 1.125px; }
+    @media only screen and (min-width: 700px) {
+      .profile-section .section-content-container.profile-details .section-content-container .edit-profile-btn {
+        visibility: hidden;
+        margin: 0; } }
   .profile-section .section-content-container.profile-details .section-content-container:first-child {
     padding: 0; }
     .profile-section .section-content-container.profile-details .section-content-container:first-child .secondary-headline {
@@ -2781,11 +2786,13 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     .profile-section .section-content-container.profile-details .section-content-container:last-child .primary-content:last-child {
       margin-bottom: 0; }
   .profile-section .section-content-container.profile-details:hover .edit-profile-btn {
-    visibility: visible;
     animation: .3s fadeIn; }
     .profile-section .section-content-container.profile-details:hover .edit-profile-btn .fa-pencil-square-o {
       color: #2f2f2f;
       cursor: pointer; }
+    @media only screen and (min-width: 700px) {
+      .profile-section .section-content-container.profile-details:hover .edit-profile-btn {
+        visibility: visible; } }
   .profile-section .section-content-container .section-container-headline .primary-headline, .profile-section .section-content-container .section-container-headline .secondary-headline {
     text-align: center; }
     @media only screen and (min-width: 700px) {

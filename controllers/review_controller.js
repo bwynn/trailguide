@@ -15,7 +15,7 @@ exports.getReviews = function(req, res) {
 
 // get review by author
 // /get_review_author - POST
-exports.getReviewByAuthor = function(req, res) {
+exports.getReviewsByAuthor = function(req, res) {
   Review.find({authorID: req.body.authorID}, function(err, reviews) {
     if (err) {
       res.send(err);
@@ -27,7 +27,7 @@ exports.getReviewByAuthor = function(req, res) {
 
 // get review by trail
 // /get_review_trail - POST
-exports.getReviewByTrail = function(req, res) {
+exports.getReviewsByTrail = function(req, res) {
   Review.find({trailID: req.body.trailID}, function(err, reviews) {
     if (err) {
       res.send(err);

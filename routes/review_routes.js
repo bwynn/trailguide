@@ -6,10 +6,10 @@ module.exports = function(app, passport) {
   app.get('/get_reviews', reviewCtrl.getReviews);
 
   // get review by author
-  app.post('/get_review_author', reviewCtrl.getReviewByAuthor);
+  app.post('/get_review_author', reviewCtrl.getReviewsByAuthor);
 
   // get review by trail
-  app.post('/get_review_trail', reviewCtrl.getReviewByTrail);
+  app.post('/get_review_trail', reviewCtrl.getReviewsByTrail);
 
   // get review by id
   app.post('/get_review', reviewCtrl.getReviewByID);
