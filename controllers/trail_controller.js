@@ -1,10 +1,12 @@
+"use strict";
+
 const Trail = require('../models/trail_model'),
       Review = require('../models/review_model');
 
 // get all trails
 // /get_all_trails - GET
-exports.getAllTrails = function(req, res) {
-    Trail.find().then(function(trails) {
+exports.getAllTrails = (req, res) => {
+    Trail.find().then((trails) => {
 
       res.json(trails);
     });
@@ -12,8 +14,8 @@ exports.getAllTrails = function(req, res) {
 
 // get trail
 // /get_trail - POST
-exports.getTrail = function(req, res) {
-    Trail.findOne({_id: req.body.id}, function(err, trail) {
+exports.getTrail = (req, res) => {
+    Trail.findOne({_id: req.body.id}, (err, trail) => {
       if (err) {
         res.send(err);
       }
@@ -24,7 +26,7 @@ exports.getTrail = function(req, res) {
 
 // add trail
 // /add_trail - POST
-exports.addTrail = function(req, res) {
+exports.addTrail = (req, res) => {
     const trail = new Trail();
 
     trail.coords.lat = req.body.lat;
@@ -38,7 +40,7 @@ exports.addTrail = function(req, res) {
     trail.author = req.body.author;
     trail.city = req.body.city;
 
-    trail.save(function(err, trail) {
+    trail.save((err, trail) => {
       if (err) {
         res.send(err);
       }
@@ -49,8 +51,8 @@ exports.addTrail = function(req, res) {
 
 // edit trail
 // /update_trail - PUT
-exports.updateTrail = function(req, res) {
-    Trail.find({title: req.body.title}, function() {
+exports.updateTrail = (req, res) => {
+    Trail.find({title: req.body.title}, () => {
       Trail.update({_id: req.body.id}, {
         "coords.lat": req.body.lat,
         "coords.lng": req.body.lng,
@@ -62,7 +64,7 @@ exports.updateTrail = function(req, res) {
         "featuredImg": req.body.featuredImg,
         "author": req.body.author,
         "city": req.body.city
-      }, function(err, trail) {
+      }, (err, trail) => {
         if (err) {
           res.send(err);
         }
@@ -74,11 +76,11 @@ exports.updateTrail = function(req, res) {
 
 // add featured image
 // /add_featured_image - PUT
-exports.addFeaturedImage = function(req, res) {
-    Trail.find({title: req.body.title}, function(err, trail) {
+exports.addFeaturedImage = (req, res) => {
+    Trail.find({title: req.body.title}, (err, trail) => {
       Trail.update({_id: req.body.id}, {
         "featuredImg": req.body.featuredImg
-      }, function(err, trail) {
+      }, (err, trail) => {
         if (err) {
           res.send(err);
         }
@@ -90,9 +92,9 @@ exports.addFeaturedImage = function(req, res) {
 
 // remove trail
 // /remove_trail - PUT
-exports.removeTrail = function(req, res) {
-  Trail.find({title: req.body.title}, function(err, trail) {
-    Trail.remove({_id: req.body.id}, function(err, trail) {
+exports.removeTrail = (req, res) => {
+  Trail.find({title: req.body.title}, (err, trail) => {
+    Trail.remove({_id: req.body.id}, (err, trail) => {
       if (err) {
         res.send(err);
       }
@@ -104,12 +106,12 @@ exports.removeTrail = function(req, res) {
 
 // add keywords
 // /add_keywords - PUT
-exports.addKeywords = function(req, res) {
+exports.addKeywords = (req, res) => {
   Trail.update({_id: req.body.id}, {
     $push: {
       keywords: req.body.keywords
     }
-  }, function(err, trail) {
+  }, (err, trail) => {
     if (err) {
       res.send(err);
     }
@@ -120,10 +122,10 @@ exports.addKeywords = function(req, res) {
 
 // add rating - this route should be called subsequently of /add_review route,
 // intended to push the req.body.rating value or var into defined trail.
-exports.addTrailRating = function(req, res) {
+exports.addTrailRating = (req, res) => {
   Trail.update({_id: req.body.trailID}, {
     $push: {rating: req.body.rating}
-  }, function(err, trail) {
+  }, (err, trail) => {
     if (err) {
       res.send(err);
     }

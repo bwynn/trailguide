@@ -1,6 +1,8 @@
+"use strict"; 
+
 const path = require('path');
 
-module.exports = function(app, passport) {
+module.exports = (app, passport) => {
 // back end routes
 // =============================================================================
   const adminCtrl = require('../controllers/admin_controller');

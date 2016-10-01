@@ -1,6 +1,8 @@
+"use strict"; 
+
 const queryCtrl = require('../controllers/query_controller');
 
-module.exports = function(app) {
+module.exports = (app) => {
   // query by keyword
   app.post('/find_by_keyword', queryCtrl.findByKeyword);
 

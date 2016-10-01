@@ -1,10 +1,12 @@
+"use strict";
+
 const Review = require("../models/review_model"),
       Trail = require("../models/trail_model");
 
 // get reviews
 // /get_reviews - GET
-exports.getReviews = function(req, res) {
-  Review.find(function(err, reviews) {
+exports.getReviews = (req, res) => {
+  Review.find((err, reviews) => {
     if (err) {
       res.send(err);
     }
@@ -15,8 +17,8 @@ exports.getReviews = function(req, res) {
 
 // get review by author
 // /get_review_author - POST
-exports.getReviewsByAuthor = function(req, res) {
-  Review.find({authorID: req.body.authorID}, function(err, reviews) {
+exports.getReviewsByAuthor = (req, res) => {
+  Review.find({authorID: req.body.authorID}, (err, reviews) => {
     if (err) {
       res.send(err);
     }
@@ -27,8 +29,8 @@ exports.getReviewsByAuthor = function(req, res) {
 
 // get review by trail
 // /get_review_trail - POST
-exports.getReviewsByTrail = function(req, res) {
-  Review.find({trailID: req.body.trailID}, function(err, reviews) {
+exports.getReviewsByTrail = (req, res) => {
+  Review.find({trailID: req.body.trailID}, (err, reviews) => {
     if (err) {
       res.send(err);
     }
@@ -39,8 +41,8 @@ exports.getReviewsByTrail = function(req, res) {
 
 // get review by ID
 // get_review - POST
-exports.getReviewByID = function(req, res) {
-  Review.findOne({_id: req.body.id}, function(err, review) {
+exports.getReviewByID = (req, res) => {
+  Review.findOne({_id: req.body.id}, (err, review) => {
     if (err) {
       res.send(err);
     }
@@ -51,7 +53,7 @@ exports.getReviewByID = function(req, res) {
 
 // add review
 // /add_review - POST
-exports.addReview = function(req, res) {
+exports.addReview = (req, res) => {
 
   const review = new Review();
 
@@ -62,7 +64,7 @@ exports.addReview = function(req, res) {
   review.comment = req.body.comment;
   review.pictures = req.body.pictures;
 
-  review.save(function(err, review) {
+  review.save((err, review) => {
     if (err) {
       res.send(err);
     }
@@ -73,13 +75,13 @@ exports.addReview = function(req, res) {
 
 // update review
 // /update_review - PUT
-exports.updateReview = function(req, res) {
-  Review.find({authorID: req.body.userID}, function(err, reviews) {
+exports.updateReview = (req, res) => {
+  Review.find({authorID: req.body.userID}, (err, reviews) => {
     Review.update({_id: req.body.reviewID}, {
       rating: req.body.rating,
       comment: req.body.comment,
       pictures: req.body.pictures
-    }, function(err, review) {
+    }, (err, review) => {
       if (err) {
         res.send(err);
       }
@@ -91,11 +93,11 @@ exports.updateReview = function(req, res) {
 
 // update review
 // /add_review_pictures - PUT
-exports.addReviewPictures = function(req, res) {
-  Review.find({authorID: req.body.userID}, function(err, reviews) {
+exports.addReviewPictures = (req, res) => {
+  Review.find({authorID: req.body.userID}, (err, reviews) => {
     Review.update({_id: req.body.reviewID}, {
       $push: {pictures: req.body.pictures}
-    }, function(err, review) {
+    }, (err, review) => {
       if (err) {
         res.send(err);
       }
@@ -107,9 +109,9 @@ exports.addReviewPictures = function(req, res) {
 
 // delete review
 // /delete_review - PUT
-exports.deleteReview = function(req, res) {
-  Review.find({authorID: req.body.userID}, function(err, review) {
-    Review.remove({_id: req.body.reviewID}, function(err, review) {
+exports.deleteReview = (req, res) => {
+  Review.find({authorID: req.body.userID}, (err, review) => {
+    Review.remove({_id: req.body.reviewID}, (err, review) => {
       if (err) {
         res.send(err);
       }

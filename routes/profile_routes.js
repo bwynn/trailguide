@@ -1,6 +1,8 @@
+"use strict"; 
+
 const profileCtrl = require('../controllers/profile_controller');
 
-module.exports = function(app, passport) {
+module.exports = (app, passport) => {
   // profile routes
   // ===========================================================================
 

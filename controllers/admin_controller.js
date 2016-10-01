@@ -1,17 +1,19 @@
+"use strict";
+
 const User = require('../models/user_model');
 
 // ADMIN USER CONTROLLERS
 
 // GET - /get_users
-exports.getAllUsers = function(req, res) {
-  User.find().then(function(err, user) {
+exports.getAllUsers = (req, res) => {
+  User.find().then((err, user) => {
 
     res.json(user);
   });
 };
 
 // POST - /create_user
-exports.createUser = function(req, res) {
+exports.createUser = (req, res) => {
 
   // create new user
   const user = new User();
@@ -20,7 +22,7 @@ exports.createUser = function(req, res) {
   user.creds.author = req.body.author;
   user.creds.admin = req.body.admin;
 
-  user.save(function(err, user) {
+  user.save((err, user) => {
     if (err) {
       res.send(err);
     }
@@ -30,9 +32,9 @@ exports.createUser = function(req, res) {
 };
 
 // PUT - /update_user
-exports.adminUpdateUser = function(req, res) {
+exports.adminUpdateUser = (req, res) => {
 
-  User.find(function(err, user) {
+  User.find((err, user) => {
     User.update({_id: req.body.id}, {
       "creds.password": req.body.password,
       "creds.author": req.body.author,
@@ -42,7 +44,7 @@ exports.adminUpdateUser = function(req, res) {
       "profile.username": req.body.username,
       "profile.firstname": req.body.firstname,
       "profile.lastname": req.body.lastname
-    }, function(err, user) {
+    }, (err, user) => {
       if (err) {
         res.send(err);
       }

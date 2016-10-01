@@ -1,6 +1,8 @@
+"use strict";
+
 const trailCtrl = require('../controllers/trail_controller');
 
-module.exports = function(app, passport) {
+module.exports = (app, passport) => {
 
   // get trails
   app.get('/get_all_trails', trailCtrl.getAllTrails); // √

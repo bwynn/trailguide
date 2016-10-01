@@ -1,9 +1,11 @@
+"use strict";
+
 const User = require('../models/user_model');
 
 // Get Profile
 // /get_profile - POST
-exports.getProfile = function(req, res) {
-  User.findOne({_id: req.session.passport.user}, function(err, user) {
+exports.getProfile = (req, res) => {
+  User.findOne({_id: req.session.passport.user}, (err, user) => {
 
     res.json(user);
   });
@@ -11,8 +13,8 @@ exports.getProfile = function(req, res) {
 
 // Get User
 // /get_user - POST
-exports.getUser = function(req, res) {
-  User.findOne({_id: req.body.id}, function(err, user) {
+exports.getUser = (req, res) => {
+  User.findOne({_id: req.body.id}, (err, user) => {
       if (err) {
         res.send(err);
       }
@@ -23,8 +25,8 @@ exports.getUser = function(req, res) {
 
 // Get All Users
 // /get_all_users - GET
-exports.getAllUsers = function(req, res) {
-  User.find(function(err, users) {
+exports.getAllUsers = (req, res) => {
+  User.find((err, users) => {
     if (err) {
       res.send(err);
     }
@@ -35,7 +37,7 @@ exports.getAllUsers = function(req, res) {
 
 // Edit Profile
 // /update_profile_details - PUT
-exports.updateProfileDetails = function(req, res) {
+exports.updateProfileDetails = (req, res) => {
 
   /*const coords = [],
         sentCoordinates = req.body.coords;
@@ -52,7 +54,7 @@ exports.updateProfileDetails = function(req, res) {
     "profile.firstname": req.body.firstname,
     "profile.lastname": req.body.lastname
     //"location.coords": req.body.coords
-  }, function(err, user) {
+  }, (err, user) => {
     if (err) {
       res.send(err);
     }
@@ -65,13 +67,13 @@ exports.updateProfileDetails = function(req, res) {
 
 // Edit Fitness Levels
 // /update_fitness_profile - PUT
-exports.updateFitnessProfile = function(req, res) {
-  User.findOne({_id: req.session.passport.user}, function(err, user) {
+exports.updateFitnessProfile = (req, res) => {
+  User.findOne({_id: req.session.passport.user}, (err, user) => {
     User.update({
       "fitness.fitnessLevel": req.body.fitnessLevel,
       "fitness.skillLevel": req.body.skillLevel,
       "fitness.preference": req.body.preference
-    }, function(err, user) {
+    }, (err, user) => {
       if (err) {
         res.send(err);
       }
@@ -83,14 +85,14 @@ exports.updateFitnessProfile = function(req, res) {
 
 // Edit Profile Picture
 // /update_profile_picture - PUT
-exports.updateProfilePicture = function(req, res) {
+exports.updateProfilePicture = (req, res) => {
   console.log(req.body);
   console.log(req.session);
   console.log(req.session.passport.user);
-  User.findOne({_id: req.session.passport.user}, function(err, user) {
+  User.findOne({_id: req.session.passport.user}, (err, user) => {
     User.update({_id: req.body.id}, {
       "profile.picture": req.body.image
-    }, function(err, user) {
+    }, (err, user) => {
       if (err) {
         res.send(err);
       }
@@ -102,8 +104,8 @@ exports.updateProfilePicture = function(req, res) {
 
 // Add Bike
 // /add_bike - PUT
-exports.addBike = function(req, res) {
-  User.findOne({_id: req.session.passport.user}, function(err, user) {
+exports.addBike = (req, res) => {
+  User.findOne({_id: req.session.passport.user}, (err, user) => {
     User.update({
       $push: {bikes: {
         brand: req.body.brand,
@@ -111,7 +113,7 @@ exports.addBike = function(req, res) {
         model: req.body.model,
         picture: req.body.image
       }}
-    }, function(err, user) {
+    }, (err, user) => {
       if (err) {
         res.send(err);
       }
@@ -123,16 +125,16 @@ exports.addBike = function(req, res) {
 
 // Update Bike
 // /update_bike - PUT
-exports.updateBike = function(req, res) {
+exports.updateBike = (req, res) => {
   console.log(req.body);
-  User.findOne({_id: req.session.passport.user}, function(err, user) {
+  User.findOne({_id: req.session.passport.user}, (err, user) => {
     User.update({bikes: {$elemMatch: {"_id": req.body.bikeID}}},
       {$set: {
         "bikes.$.brand": req.body.brand,
         "bikes.$.year": req.body.year,
         "bikes.$.model": req.body.model,
         "bikes.$.picture": req.body.image
-    }}, function(err, user) {
+    }}, (err, user) => {
       if (err) {
         res.send(err);
       }
@@ -144,13 +146,13 @@ exports.updateBike = function(req, res) {
 
 // Delete Bike
 // /delete_bike - PUT
-exports.deleteBike = function(req, res) {
-  User.findOne({_id: req.session.passport.user}, function(err, user) {
+exports.deleteBike = (req, res) => {
+  User.findOne({_id: req.session.passport.user}, (err, user) => {
     User.update({}, {
       $pull: {bikes: {$elemMatch: {"bikes.$._id": req.body.bikeID}}}
     }, {
 
-    },  function(err, user) {
+    }, (err, user) => {
         if (err) {
           res.send(err);
         }

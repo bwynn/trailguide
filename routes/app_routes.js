@@ -1,12 +1,14 @@
+"use strict"; 
+
 const path = require('path');
 
-module.exports = function(app, passport) {
+module.exports = (app, passport) => {
   // back end routes
   // ===========================================================================
 
   // login ---------------------------------------------------------------------
   // get
-  app.get('/api/login', function(req, res) {
+  app.get('/api/login', (req, res) => {
     res.json({message: "Welcome to the login!"});
   });
 
@@ -18,7 +20,7 @@ module.exports = function(app, passport) {
 
   // signup
   // get
-  app.get('/api/signup', function(req, res) {
+  app.get('/api/signup', (req, res) => {
     res.json({message: "Welcome to the signup page!"});
   });
 
@@ -31,7 +33,7 @@ module.exports = function(app, passport) {
 
   // log out
   // ---------------------------------------------------------------------------
-  app.get('/logout', function(req, res) {
+  app.get('/logout', (req, res) => {
     req.logOut();
     req.session.destroy(function() {
       res.redirect('/api/login');
@@ -40,11 +42,11 @@ module.exports = function(app, passport) {
 
   // front end routes
   // ===========================================================================
-  app.get('/', function(req, res) {
+  app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "../public/views/index.html"));
   });
 
-  app.get('/dashboard', loggedIn, function(req, res) {
+  app.get('/dashboard', loggedIn, (req, res) => {
     //console.log(req);
     res.sendFile(path.join(__dirname, "../public/views/index.html"));
   })

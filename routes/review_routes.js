@@ -1,6 +1,8 @@
+"use strict";
+
 const reviewCtrl = require('../controllers/review_controller');
 
-module.exports = function(app, passport) {
+module.exports = (app, passport) => {
 
   // get all reviews
   app.get('/get_reviews', reviewCtrl.getReviews);
